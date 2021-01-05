@@ -1,5 +1,5 @@
 const home_reducer= (state={}, action)=>{
-    switch ('') {
+    switch (action.type) {
         
     
         default:
