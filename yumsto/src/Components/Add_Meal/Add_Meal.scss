@@ -1,0 +1,40 @@
+.addMealRow {
+  display: grid;
+  grid-template-columns: 1fr;
+  background-image: url("https://echo360.com/wp-content/uploads/2018/08/iStock-916563360.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  color: white;
+
+  .col {
+    .searchResults {
+      position: relative;
+
+      * {
+        display: inline;
+      }
+
+      .searchImg {
+        position: absolute;
+        right: 0;
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    .resultlargeImg {
+      position: absolute;
+      right: -10px;
+    }
+
+    .searchBar {
+      position: relative;
+    }
+
+    .searchIcon {
+      position: absolute;
+      right: 0;
+    }
+  }
+}

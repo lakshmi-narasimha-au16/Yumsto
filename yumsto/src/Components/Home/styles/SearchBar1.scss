@@ -22,11 +22,12 @@
     .searchInput{
         width: 100%;
         height: 35px;
-        /* background-color: lightblue; */
+        background-color: lightblue; 
         border-radius: 10px;
+        cursor: text;
         border-style: none;
         font-size: 22px;
-        border: 2px solid black;
+        border: 1px solid black;
         padding-left:20px;
     }
     &.searchInput:hover,&.searchInput:focus{
@@ -35,10 +36,10 @@
     .searchImg{
         position: absolute;
         right: -25px;
-        top: -0.3px;
+        top: -2.5px;
         padding: 2px;
-        background-color: rgb(255, 0, 0);
-        border : 2px solid black;
+        background-color: rgba(220, 20, 60, 1);
+        border : 1px solid black;
         border-top-right-radius: 10px;
         border-bottom-right-radius: 10px;
         transition: 0.3s ease;

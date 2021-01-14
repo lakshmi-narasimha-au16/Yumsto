@@ -6,7 +6,7 @@ const base_url='https://api.spoonacular.com'
 
 
 export const SearchResults=(query)=>{
-    const output = fetch(`${base_url}/recipes/complexSearch?apiKey=${apiKey1}&query=${query}&number=20`).then(res=>res.json())             // `${base_url}/recipes/complexSearch?apiKey=${apiKey}&query=${query}&number=20`
+    const output = fetch(`${base_url}/recipes/complexSearch?apiKey=${apiKey}&query=${query}&number=20`).then(res=>res.json())             // `${base_url}/recipes/complexSearch?apiKey=${apiKey}&query=${query}&number=20`
     return {
         type: 'SEARCH',
         payload: output
@@ -22,7 +22,7 @@ export const SearchTerm = (searchTerm)=>{
 
 export const ItemDetailBulk = async (ids) => {
     const Ids = ids.join(',')
-    const output1 = fetch(`${base_url}/recipes/informationBulk?ids=${Ids}&apiKey=${apiKey1}`).then(res=>res.json())            // `${base_url}/recipes/informationBulk?ids=${Ids}&apiKey=${apiKey}`
+    const output1 = fetch(`${base_url}/recipes/informationBulk?ids=${Ids}&apiKey=${apiKey}`).then(res=>res.json())            // `${base_url}/recipes/informationBulk?ids=${Ids}&apiKey=${apiKey}`
     
     return {
         type:'ITEM_DETAILBULK',
@@ -30,9 +30,10 @@ export const ItemDetailBulk = async (ids) => {
     }
 }
 
+// `${base_url}/recipes/complexSearch?cuisine=${c}&diet=${d}&type=${m}&number=20&maxReadyTime=${r}&minProtein=${mp}&minCalories=${mc}&maxCalories=${maxc}&maxProtein=${maxp}&apiKey=${apiKey}`
 
 export const Home_details_action=(c, d, m, r, mp, mc, maxc, maxp )=>{
-    const output2 = fetch(`${base_url}/recipes/complexSearch?cuisine=${c}&diet=${d}&type=${m}&number=20&maxReadyTime=${r}&minProtein=${mp}&minCalories=${mc}&maxCalories=${maxc}&maxProtein=${maxp}&apiKey=${apiKey1}`)
+    const output2 = fetch(`${base_url}/recipes/complesxSearch?cuisine=${c}&diet=${d}&type=${m}&number=20&maxReadyTime=${r}&minProtein=${mp}&minCalories=${mc}&maxCalories=${maxc}&maxProtein=${maxp}&apiKey=${apiKey}`)
     .then(res=>res.json())
     return {
         type: 'HOMEPAGEFILTERS',

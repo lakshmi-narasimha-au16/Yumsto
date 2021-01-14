@@ -4,19 +4,27 @@ import ReactHtmlParser from 'react-html-parser'
 
 const SearchResultCard= (props)=>{
     const paragraph = ()=>{
-        const p = document.createElement('p')
-        p.innerHTML = props.details.summary
-        for(let i of p.childNodes){
-            if(i.nodeName==='A'){
-                i.setAttribute('target','_blank')
+        if(props.details){
+            const p = document.createElement('p')
+            p.innerHTML = props.details.summary
+            for(let i of p.childNodes){
+                if(i.nodeName==='A'){
+                    i.setAttribute('target','_blank')
+                }
             }
+            return ReactHtmlParser(p.outerHTML)
         }
-        return ReactHtmlParser(p.outerHTML)
+        
     }
+    const imageRender = ()=>{
+        if(props.details){
+            return props.details.image
+        }
+    } 
     return(
         <div className='searchCard'>
             <div className='cardImageContainer'>
-                <img src={props.item.image} alt="item" />
+                <img src={imageRender()} alt="item" />
             </div>
             <div className='cardDetailContainer'>
                 <div className='item-title'>

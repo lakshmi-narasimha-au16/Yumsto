@@ -95,11 +95,14 @@ class SearchBar extends React.Component{
     }
 
     componentWillUnmount = () => {
-        const bulk=[]
-        for (let i of this.props.searchresults.results){
-            bulk.push(i.id)
+        if (this.props.searchresults){
+            const bulk=[]
+            for (let i of this.props.searchresults.results){
+                bulk.push(i.id)
+            }
+            this.props.dispatch(ItemDetailBulk(bulk))
         }
-        this.props.dispatch(ItemDetailBulk(bulk))
+        
     }
 
     render(){

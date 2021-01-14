@@ -1,4 +1,4 @@
-import "./styles/Home_details.scss"
+import "./styles/Home_details1.scss"
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -65,7 +65,7 @@ const Display = (props) => {
                 <img
                   onMouseOver={() => imageMouseOver(details.id)}
                   onMouseLeave={imageMouseLeave}
-                  src={details.image}
+                  src={details.image} alt="item"
                 />
                 <p>{details.title}</p>
 
@@ -99,29 +99,27 @@ const Display = (props) => {
   };
 
   return (
-    <div>
       <div className="mainrow">
-        <div className="maincol">
-          <div className="filterrow">
-            <div className="filtercol">
-              <button className="butt" onClick={cusinesClickHandler}>
-                Cusines <span className="material-icons">filter_list</span>
-              </button>
-              {cusineClick ? (
-                <div>
-                  <div className="cusine">
-                    <input
-                      onClick={clickHandler}
-                      type="radio"
-                      value="Indian"
-                      name="cuisine"
-                      id="ind"
-                    />
-                    <label htmlFor="ind" className="label">
+        <div className="Filtercol">
+            <h3 className="filtersLabel">Filters</h3>
+            <div className="filters">
+              <div className="filtercol">
+                <button className="btn" onClick={cusinesClickHandler}>
+                Cusines <span className="material-icons"></span>
+                </button>
+              {cusineClick ? 
+                <div className="cusine">
+                  <input
+                    onClick={clickHandler}
+                    type="radio"
+                    value="Indian"
+                    name="cuisine"
+                    id="ind"
+                  />
+                  <label htmlFor="ind" className="label">
                       Indian
                     </label>
-                  </div>
-                  <div className="cusine">
+                  
                     <input
                       onClick={clickHandler}
                       type="radio"
@@ -130,8 +128,8 @@ const Display = (props) => {
                       id="ame"
                     />
                     <label htmlFor="ame">American</label>
-                  </div>
-                  <div className="cusine">
+                  
+                  
                     <input
                       onClick={clickHandler}
                       type="radio"
@@ -140,8 +138,7 @@ const Display = (props) => {
                       id="car"
                     />
                     <label htmlFor="car">Caribbean</label>
-                  </div>
-                  <div className="cusine">
+                  
                     <input
                       type="radio"
                       onClick={clickHandler}
@@ -150,8 +147,8 @@ const Display = (props) => {
                       id="chi"
                     />
                     <label htmlFor="chi">Chinese</label>
-                  </div>
-                  <div className="cusine">
+
+                  <div >
                     <input
                       onClick={clickHandler}
                       type="radio"
@@ -162,83 +159,80 @@ const Display = (props) => {
                     <label htmlFor="sou">Southern</label>
                   </div>
                 </div>
-              ) : (
-                ""
-              )}
+               : ""}
             </div>
-            <div className="filtercol dietcol">
-              <button className="butt" onClick={dietClickHandler}>
-                Diet Food <span className="material-icons">filter_list</span>
-              </button>
+              <div className="filtercol">
+                <button className="btn" onClick={dietClickHandler}>
+                  Diet Food <span className="material-icons"></span>
+                </button>
 
-              {dietClick ? (
-                <div>
-                  <div className="diet">
-                    <div>
-                      <input
-                        onClick={clickHandler}
-                        type="radio"
-                        id="glu"
-                        value="Gluten Free"
-                        name="diet"
-                      />
-                      <label htmlFor="glu">Gluten Free</label>
+                {dietClick ? (
+                  <div>
+                    <div className="diet">
+                      <div className="option">
+                        <input
+                          onClick={clickHandler}
+                          type="radio"
+                          id="glu"
+                          value="Gluten Free"
+                          name="diet"
+                        />
+                        <label htmlFor="glu">Gluten Free</label>
+                      </div>
+                      <small>Avoid wheat,barley<br /> and other grain foods</small>
                     </div>
-                    <small>Avoid wheat, barley and other grain foods</small>
-                  </div>
-                  <div className="diet">
-                    <div>
-                      <input
-                        onClick={clickHandler}
-                        type="radio"
-                        id="vegi"
-                        value="Vegetarian"
-                        name="diet"
-                      />
-                      <label htmlFor="vegi">Vegetarian</label>
+                    <div className="diet">
+                      <div className="option">
+                        <input
+                          onClick={clickHandler}
+                          type="radio"
+                          id="vegi"
+                          value="Vegetarian"
+                          name="diet"
+                        />
+                        <label htmlFor="vegi">Vegetarian</label>
+                      </div>
+                      <small>Pure Veg</small>
                     </div>
-                    <small>Pure Veg</small>
-                  </div>
 
-                  <div className="diet">
-                    <div>
-                      <input
-                        onClick={clickHandler}
-                        type="radio"
-                        id="lact"
-                        value="Lacto-Vegetarian"
-                        name="diet"
-                      />
-                      <label htmlFor="lact">Lacto-Vegetarian</label>
+                    <div className="diet">
+                      <div className="option">
+                        <input
+                          onClick={clickHandler}
+                          type="radio"
+                          id="lact"
+                          value="Lacto-Vegetarian"
+                          name="diet"
+                        />
+                        <label htmlFor="lact">Lacto-Vegetarian</label>
+                      </div>
+                      <small>Avoid Egg</small>
                     </div>
-                    <small>Avoid Egg</small>
-                  </div>
-                  <div className="diet">
-                    <div>
-                      <input
-                        onClick={clickHandler}
-                        type="radio"
-                        id="vegan"
-                        value="Vegan"
-                        name="diet"
-                      />
-                      <label htmlFor="vegan">Vegan</label>
+                    <div className="diet">
+                      <div className="option">
+                        <input
+                          onClick={clickHandler}
+                          type="radio"
+                          id="vegan"
+                          value="Vegan"
+                          name="diet"
+                        />
+                        <label htmlFor="vegan">Vegan</label>
+                      </div>
+                      <small>Avoid Meat</small>
                     </div>
-                    <small>Avoid Meat</small>
                   </div>
-                </div>
-              ) : (
-                ""
-              )}
-            </div>
-            <div className="filtercol">
-              <button className="butt" onClick={mealClickHandler}>
-                Meal Types <span className="material-icons">filter_list</span>
-              </button>
+                ) : (
+                  ""
+                )}
+              </div>
+              <div className="filtercol">
+                <button className="btn" onClick={mealClickHandler}>
+                  Meal Types <span className="material-icons"></span>
+                </button>
 
-              {mealClick ? (
-                <div>
-                  <div className="meal">
+                {mealClick ? (
+                  <div className="cusine">
                     <input
                       onClick={clickHandler}
                       type="radio"
@@ -247,8 +241,6 @@ const Display = (props) => {
                       name="mealType"
                     />
                     <label htmlFor="sidedish">Side Dish</label>
-                  </div>
-                  <div className="meal">
                     <input
                       onClick={clickHandler}
                       type="radio"
@@ -257,8 +249,6 @@ const Display = (props) => {
                       name="mealType"
                     />
                     <label htmlFor="dessert">Dessert</label>
-                  </div>
-                  <div className="meal">
                     <input
                       onClick={clickHandler}
                       type="radio"
@@ -267,8 +257,6 @@ const Display = (props) => {
                       name="mealType"
                     />
                     <label htmlFor="breakfast">Breakfast</label>
-                  </div>
-                  <div className="meal">
                     <input
                       onClick={clickHandler}
                       type="radio"
@@ -278,95 +266,94 @@ const Display = (props) => {
                     />
                     <label htmlFor="snack">Snack</label>
                   </div>
-                </div>
-              ) : (
-                ""
-              )}
-            </div>
-            <div className="filtercol">
-              <button className="butt" onClick={maxreadyClickHandler}>
-                Max Ready Time<small>(in min)</small>{" "}
-                <span className="material-icons">filter_list</span>
-              </button>
-              {maxreadyClick ? (
-                <div>
-                  <div className="readytime">
-                    <input
-                      onClick={clickHandler}
-                      type="radio"
-                      id="40"
-                      value="40"
-                      name="readyTime"
-                    />
-                    <label htmlFor="40">40</label>
+                ) : (
+                  ""
+                )}
+              </div>
+              <div className="filtercol">
+                <button className="btn" onClick={maxreadyClickHandler}>
+                  Max Ready Time<small>(in min)</small>{" "}
+                  <span className="material-icons"></span>
+                </button>
+                {maxreadyClick ? (
+                  <div className="cusine">
+                    <div className="readytime">
+                      <input
+                        onClick={clickHandler}
+                        type="radio"
+                        id="40"
+                        value="40"
+                        name="readyTime"
+                      />
+                      <label htmlFor="40">40</label>
+                    </div>
+                    <div className="readytime">
+                      <input
+                        value="60"
+                        onClick={clickHandler}
+                        type="radio"
+                        id="60"
+                        name="readyTime"
+                      />
+                      <label htmlFor="60">60</label>
+                    </div>
+                    <div className="readytime">
+                      <input
+                        value="100"
+                        onClick={clickHandler}
+                        type="radio"
+                        id="100"
+                        name="readyTime"
+                      />
+                      <label htmlFor="100">100</label>
+                    </div>
+                    <div className="readytime">
+                      <input
+                        value="150"
+                        onClick={clickHandler}
+                        type="radio"
+                        id="150"
+                        name="readyTime"
+                      />
+                      <label htmlFor="150">150</label>
+                    </div>
                   </div>
-                  <div className="readytime">
-                    <input
-                      value="60"
-                      onClick={clickHandler}
-                      type="radio"
-                      id="60"
-                      name="readyTime"
-                    />
-                    <label htmlFor="60">60</label>
-                  </div>
-                  <div className="readytime">
-                    <input
-                      value="100"
-                      onClick={clickHandler}
-                      type="radio"
-                      id="100"
-                      name="readyTime"
-                    />
-                    <label htmlFor="100">100</label>
-                  </div>
-                  <div className="readytime">
-                    <input
-                      value="150"
-                      onClick={clickHandler}
-                      type="radio"
-                      id="150"
-                      name="readyTime"
-                    />
-                    <label htmlFor="150">150</label>
-                  </div>
-                </div>
-              ) : (
-                ""
-              )}
-            </div>
-            <div className="filtercol">
-              <button className="butt" onClick={calorieClickHandler}>
-                Calories <span className="material-icons">filter_list</span>
-              </button>
+                ) : (
+                  ""
+                )}
+              </div>
+              <div className="filtercol">
+                <button className="btn" onClick={calorieClickHandler}>
+                  Calories <span className="material-icons"></span>
+                </button>
 
-              {calorieClick ? (
-                <div className="calories">
-                  <div onChange={changeHandler}>
-                    <input
-                      placeholder="min 0"
-                      type="number"
-                      name="minCalories"
-                    />
-                    <input
-                      placeholder="max 800"
-                      type="number"
-                      name="maxCalories"
-                    />
+                {calorieClick ? (
+                  <div className="calories">
+                    <div onChange={changeHandler}>
+                      <input
+                        placeholder="min 0"
+                        type="number"
+                        name="minCalories"
+                      />
+                      <input
+                        placeholder="max 800"
+                        type="number"
+                        name="maxCalories"
+                      />
+                    </div>
+                    <button onClick={goHandler}>Go</button>
                   </div>
-                  <button onClick={goHandler}>Go</button>
-                </div>
-              ) : (
-                ""
-              )}
-            </div>
-            <div className="filtercol protienscol">
-              <button className="butt" onClick={protienClickHandler}>
-                Protiens <span className="material-icons">filter_list</span>
+                ) : (
+                  ""
+                )}
+              </div>
+              <div className="filtercol">
+                <button className="btn" onClick={protienClickHandler}>
+                Protiens <span className="material-icons"></span>
               </button>
 
               {protienClick ? (
-                <div className="protiens">
+                <div className="calories">
                   <div onChange={changeHandler}>
                     <input
                       placeholder="min 0"
@@ -384,14 +371,14 @@ const Display = (props) => {
               ) : (
                 ""
               )}
+              </div>
+              
             </div>
           </div>
-        </div>
-        <div className="maincol">
-          <div className="detailsRow">{renderDetails()}</div>
+        <div className="displaycol">
+          {renderDetails()}
         </div>
       </div>
-    </div>
   );
 };
 
