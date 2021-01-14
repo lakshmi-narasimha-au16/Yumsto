@@ -1,9 +1,8 @@
 import React from "react";
-import {connect} from "react-redux"
+import { connect } from "react-redux";
 import Detail from "./Home_Details_display";
-import { Home_details_action } from "../../Store/Actions/homeActions"
-
-
+import { Home_details_action } from "../../Store/Actions/homeActions";
+import "./styles/Home_detail1.scss";
 class Details extends React.Component {
   constructor() {
     super();
@@ -27,39 +26,39 @@ class Details extends React.Component {
     };
   }
 
-  
-
-
   componentDidMount() {
-    this.props.dispatch(Home_details_action(
-      this.state.cuisine, 
-      this.state.diet, 
-      this.state.mealType, 
-      this.state.readyTime, 
-      this.state.minProtein,
-      this.state.minCalories,
-      this.state.maxCalories,
-      this.state.maxProtein
-      ))
-  }
-
-  componentDidUpdate() {
-    if (this.state.dummy) {
-      this.props.dispatch(Home_details_action(
-        this.state.cuisine, 
-        this.state.diet, 
-        this.state.mealType, 
-        this.state.readyTime, 
+    this.props.dispatch(
+      Home_details_action(
+        this.state.cuisine,
+        this.state.diet,
+        this.state.mealType,
+        this.state.readyTime,
         this.state.minProtein,
         this.state.minCalories,
         this.state.maxCalories,
         this.state.maxProtein
-      ))
+      )
+    );
+  }
+
+  componentDidUpdate() {
+    if (this.state.dummy) {
+      this.props.dispatch(
+        Home_details_action(
+          this.state.cuisine,
+          this.state.diet,
+          this.state.mealType,
+          this.state.readyTime,
+          this.state.minProtein,
+          this.state.minCalories,
+          this.state.maxCalories,
+          this.state.maxProtein
+        )
+      );
       this.setState({
         ...this.state,
         dummy: "",
-      })
-
+      });
     }
   }
 
@@ -214,8 +213,19 @@ class Details extends React.Component {
   };
 
   render() {
-    if(this.props.apiData){
-      return (
+    if (this.props.apiData) {
+      if (
+        this.props.apiData.status === "failure"
+      ) {
+        return (
+          <div className="nodatarow">
+            <div className="nodatacol">
+              <img src="https://motiongraphicsphoebe.files.wordpress.com/2018/10/tumblr_nurhzkukqo1syz1nro1_500.gif" />
+            </div>
+          </div>
+        );
+      } else {
+        return (
           <div>
             <Detail
               data={this.props.apiData}
@@ -242,19 +252,22 @@ class Details extends React.Component {
           </div>
         );
       }
-      else{
-        return(
-          <div>Home</div>
-        )
-      }
+    } else {
+      return (
+        <div className="nodatarow">
+          <div className="nodatacol">
+            <img src="https://motiongraphicsphoebe.files.wordpress.com/2018/10/tumblr_nurhzkukqo1syz1nro1_500.gif" />
+          </div>
+        </div>
+      );
     }
-
-    }
-    
-const mapStateToProps = (state) => {
-  return {
-    apiData:state.home_reducer.apiDataStore
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    apiData: state.home_reducer.apiDataStore,
+  };
+};
 
 export default connect(mapStateToProps)(Details);

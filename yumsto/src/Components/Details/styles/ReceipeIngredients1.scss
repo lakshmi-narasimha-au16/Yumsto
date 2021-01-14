@@ -1,0 +1,13 @@
+.nodatarow {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+
+  .nodatacol {
+    img {
+      width: 100%;
+      height: 90vh;
+    }
+  }
+}

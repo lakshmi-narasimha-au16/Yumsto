@@ -1,0 +1,32 @@
+
+.similarReceipesTitle{
+    margin-bottom: 50px;
+    margin-left: 30px;
+}
+.similarReceipesRow{
+    display: grid;
+	row-gap: 15px;
+	column-gap: 15px;
+	margin-right: 20px;
+    margin-left: 30px;
+    
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    
+    .similarReceipesCol{
+        color: rgb(54, 48, 48);
+	  position: relative;
+      border: 1px solid rgb(233, 225, 225);
+      
+
+      img{
+        width: 100%;
+		margin-bottom: 15px;
+      }
+
+      p{
+        margin-left: 10px;
+       
+      }
+    }
+}
+

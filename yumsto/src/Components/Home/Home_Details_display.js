@@ -59,7 +59,7 @@ const Display = (props) => {
             <React.Fragment key={details.id}>
               <Link
                 style={{ textDecoration: "none" }}
-                to={`/${details.id}`}
+                to={`/details/${details.id}`}
                 className="col"
               >
                 <img
@@ -87,15 +87,7 @@ const Display = (props) => {
           </div>
         );
       }
-    } else {
-      return (
-        <div className="nodatarow">
-          <div className="nodatacol">
-            <img src="https://motiongraphicsphoebe.files.wordpress.com/2018/10/tumblr_nurhzkukqo1syz1nro1_500.gif" />
-          </div>
-        </div>
-      );
-    }
+    } 
   };
 
   return (

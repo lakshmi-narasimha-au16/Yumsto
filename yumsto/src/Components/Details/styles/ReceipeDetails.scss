@@ -1,0 +1,112 @@
+
+.detailsTitle{
+    
+    margin-top: 5px;
+    margin-left: 30px;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+
+.star {
+    
+    margin-left: 30px;
+    
+    *{
+        color: red;
+    }
+    
+}
+.detailsPara{
+    margin-left: 30px;
+    margin-bottom: 70px;
+}
+
+.receipeImgRow{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 30px;
+    
+    
+    
+
+    .receipeImgCol{
+        
+
+        img{
+            width: 100%;
+            
+        }
+
+
+        .tinyNutriInfo{
+            position: relative;
+            margin-left: 80px;
+            margin-top: 50px;
+            width: 190px;
+            padding: 20px;
+            border: 1px solid rgb(214, 196, 196);
+            box-shadow: 0px 0px 2px grey;
+
+            strong{
+                color: rgb(75, 66, 66);
+            }
+
+            .morenutriInfo{
+                text-align: center;
+                color: black;
+                text-decoration: underline;
+                text-decoration-color:red ;
+                
+            }
+
+            link{
+                text-decoration: underline;
+                text-decoration-color:red ;
+            }
+
+            .timer{
+                position: absolute;
+                color: rgb(235, 63, 63);
+                right: -10px;
+                top: -10px;
+                background-color: white;
+                font-size: 30px;
+            }
+        }
+        
+
+        
+    }
+    .varieties{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        
+        column-gap: 20px;
+        
+        
+        div{
+        
+            *{
+               
+                background-color: rgb(216, 130, 60);
+                padding:4px 5px;
+                border-radius: 4px;
+                color: white;
+                font-size: larger;
+            }
+
+            p:not(:first-child){
+                font-size: smaller;
+                background-color: rgb(85, 85, 107);
+                padding:5px 5px;
+                border-radius: 50px;
+                padding-left: 10px;
+            }
+        }
+    }
+    
+
+
+}
+   
