@@ -1,0 +1,22 @@
+section{
+    .dayMealPlan{
+        display: grid;
+        grid-template-columns: 20% 20% 1fr;
+        margin: 10px;
+        border: 1px solid crimson;
+        align-items: center;
+        .dayDateColumn{
+            align-self: flex-start;
+            padding: 10px;
+        }
+        .subDayColumn{
+            padding: 5px;
+        }
+        .subDayColumnDetail{
+            padding: 5px;
+            h1{
+                margin-left: 0;
+            }
+        }
+    }
+}

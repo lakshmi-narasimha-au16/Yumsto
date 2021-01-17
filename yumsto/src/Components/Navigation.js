@@ -1,7 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import "./Navigation.scss"
 import { connect } from "react-redux"
+import { userData, isAuthenticated } from "../Store/Actions/authActions"
 
 class Navigation extends React.Component{
     constructor(){
@@ -10,7 +11,6 @@ class Navigation extends React.Component{
             isOpen:true
         }
     }
-    
    
     toggleMenu = () =>{
         if(this.state.isOpen===false){
@@ -21,44 +21,56 @@ class Navigation extends React.Component{
         }
     }
 
+    logoutHandler= () => {
+        sessionStorage.removeItem('_ltk')
+        this.props.dispatch((userData({})))
+        this.props.dispatch((isAuthenticated(false)))
+    }
+
     conditionalRender = ()=>{
         const token = sessionStorage.getItem('_ltk')
-        if(token===undefined || token==null){
-            return(
+        if(token==="undefined" || token==null || !this.props.isLogged){
+            if(this.props.match.url==="/login"){
+                return(
+                    <></>
+                )
+            }
+            else{
+                return(
                 <React.Fragment>
-                    <li><Link to="/login" className="links">Login</Link></li>
-                    <li><Link to="/login" className="links">Register</Link></li>
+                    <li><Link to="/login" className="links">Login/Register</Link></li>
                 </React.Fragment>
-            )
+                )
+            }
         }
         else{
             return (
                 <React.Fragment>
-                    <li><Link className="links">Welcome {this.props.username.name}</Link></li>
+                    <li>Welcome {this.props.username.name}</li>
+                    <li><Link to="/mealplans" className="links">My Plans</Link></li>
+                    <li><Link onClick={this.logoutHandler} className="links">Logout</Link></li>
                 </React.Fragment>
             )
         }
     }
    
     render(){
+        
         return(
-        <nav class="navbar">
+        <nav className="navbar">
             <div className='logo'>
                 <h1><Link to="/">YUMSTO</Link></h1>
             </div>
-            <div class="hamburger" onClick={this.toggleMenu}>
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
+            <div className="hamburger" onClick={this.toggleMenu}>
+                <div className="line"></div>
+                <div className="line"></div>
+                <div className="line"></div>
             </div>
-            <ul class={this.state.isOpen?"nav-links":"nav-links open"}>
+            <ul className={this.state.isOpen?"nav-links":"nav-links open"}>
                 {this.conditionalRender()}
             </ul>
         </nav>    
         )
-        
-        
-        
     }
 }
 
@@ -68,4 +80,4 @@ const mapStateToProps = (state)=>{
         username: state.auth_reducer.userdata
     }
 }
-export default connect(mapStateToProps)(Navigation)
+export default connect(mapStateToProps)(withRouter(Navigation))

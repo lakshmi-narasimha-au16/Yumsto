@@ -30,13 +30,13 @@
         border: 1px solid black;
         padding-left:20px;
     }
-    &.searchInput:hover,&.searchInput:focus{
-        box-shadow: 1px 1px 4px 1px lightskyblue ;
+    #inputSearch:hover #inputSearch:focus{
+        box-shadow: 1px 8px 4px 1px rgb(199, 28, 28) ;
     }
     .searchImg{
         position: absolute;
         right: -25px;
-        top: -2.5px;
+        top: -2px;
         padding: 2px;
         background-color: rgba(220, 20, 60, 1);
         border : 1px solid black;

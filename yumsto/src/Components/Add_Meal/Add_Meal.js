@@ -9,28 +9,20 @@ class AddingMeal extends React.Component{
 
     constructor(){
         super()
-
         this.state={
             apiData:"",
             searchInputVal:"",
             diet:"",
-            choosenReceipe:""
+            choosenRecipe:"",
+            imageId:""
         }
     }
 
-
-
-
     dietSelectHandler=(e)=>{
-        
-        
             this.setState({
                 ...this.state,
                 diet:e.target.value
             })
-            
-
-        
     }
 
     searchInputHandler=(e)=>{
@@ -52,21 +44,32 @@ class AddingMeal extends React.Component{
     
     }
 
-    receipechooseHandler=(id,title)=>{
-
+    RecipechooseHandler=(id,title)=>{
         this.setState({
             ...this.state,
-            receipeId:id,
-            receipeTitle:title,
-            choosenReceipe:title,
+            RecipeId:id,
+            RecipeTitle:title,
+            choosenRecipe:title,
             apiData:"",
-
         })
     }
-    render(){
-        console.log(this.state);
-        return(
 
+    imageMouseOver = (id) => {
+        this.setState({
+          ...this.state,
+          imageId: id,
+        });
+    };
+
+    imageMouseLeave = () => {
+    this.setState({
+        ...this.state,
+        imageId: "",
+    });
+    };
+
+    render(){
+        return(
             <div>
                 <Details  
                 dietSelectHandler={this.dietSelectHandler}
@@ -74,8 +77,11 @@ class AddingMeal extends React.Component{
                 searchInputVal={this.state.searchInputVal}
                 searchInputHandler={this.searchInputHandler}
                 searchClickHandler={this.searchClickHandler}
-                receipechooseHandler={this.receipechooseHandler}
-                choosenReceipe={this.state.choosenReceipe}
+                RecipechooseHandler={this.RecipechooseHandler}
+                choosenRecipe={this.state.choosenRecipe}
+                imageMouseOver={this.imageMouseOver}
+                imageMouseLeave={this.imageMouseLeave}
+                imageId={this.state.imageId}
                 />
             </div>
         )

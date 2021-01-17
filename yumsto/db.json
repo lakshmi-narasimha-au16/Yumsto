@@ -2598,5 +2598,419 @@
         "originalId": null,
         "spoonacularSourceUrl": "https://spoonacular.com/chicken-tortilla-soup-slow-cooker-715392"
       }
-    ]
-  }
+    ],
+    "mealplans":{
+      "days": [
+        {
+          "nutritionSummary": {
+            "nutrients": [
+              {
+                "title": "Calories",
+                "amount": 0,
+                "unit": "cal",
+                "percentDailyNeeds": 0
+              },
+              {
+                "title": "Fat",
+                "amount": 0,
+                "unit": "g",
+                "percentDailyNeeds": 0
+              },
+              {
+                "title": "Carbohydrates",
+                "amount": 0,
+                "unit": "g",
+                "percentDailyNeeds": 0
+              },
+              {
+                "title": "Protein",
+                "amount": 0,
+                "unit": "g",
+                "percentDailyNeeds": 0
+              }
+            ]
+          },
+          "nutritionSummaryBreakfast": {
+            "nutrients": [
+              {
+                "title": "Calories",
+                "amount": 0,
+                "unit": "cal",
+                "percentDailyNeeds": 0
+              },
+              {
+                "title": "Fat",
+                "amount": 0,
+                "unit": "g",
+                "percentDailyNeeds": 0
+              },
+              {
+                "title": "Carbohydrates",
+                "amount": 0,
+                "unit": "g",
+                "percentDailyNeeds": 0
+              },
+              {
+                "title": "Protein",
+                "amount": 0,
+                "unit": "g",
+                "percentDailyNeeds": 0
+              }
+            ]
+          },
+          "nutritionSummaryLunch": {
+            "nutrients": [
+              {
+                "title": "Calories",
+                "amount": 0,
+                "unit": "cal",
+                "percentDailyNeeds": 0
+              },
+              {
+                "title": "Fat",
+                "amount": 0,
+                "unit": "g",
+                "percentDailyNeeds": 0
+              },
+              {
+                "title": "Carbohydrates",
+                "amount": 0,
+                "unit": "g",
+                "percentDailyNeeds": 0
+              },
+              {
+                "title": "Protein",
+                "amount": 0,
+                "unit": "g",
+                "percentDailyNeeds": 0
+              }
+            ]
+          },
+          "nutritionSummaryDinner": {
+            "nutrients": [
+              {
+                "title": "Calories",
+                "amount": 0,
+                "unit": "cal",
+                "percentDailyNeeds": 0
+              },
+              {
+                "title": "Fat",
+                "amount": 0,
+                "unit": "g",
+                "percentDailyNeeds": 0
+              },
+              {
+                "title": "Carbohydrates",
+                "amount": 0,
+                "unit": "g",
+                "percentDailyNeeds": 0
+              },
+              {
+                "title": "Protein",
+                "amount": 0,
+                "unit": "g",
+                "percentDailyNeeds": 0
+              }
+            ]
+          },
+          "date": 1610841600,
+          "day": "Sunday",
+          "items": [
+            {
+              "id": 4816325,
+              "slot": 3,
+              "position": 1,
+              "type": "CUSTOM_FOOD",
+              "value": {
+                "title": "CareOne Glucosamine & Vitamin D3 Caplets - 90 CT"
+              }
+            }
+          ]
+        },
+        {
+          "nutritionSummary": {
+            "nutrients": [
+              {
+                "title": "Calories",
+                "amount": 330,
+                "unit": "cal",
+                "percentDailyNeeds": 17
+              },
+              {
+                "title": "Fat",
+                "amount": 6,
+                "unit": "g",
+                "percentDailyNeeds": 9
+              },
+              {
+                "title": "Carbohydrates",
+                "amount": 61,
+                "unit": "g",
+                "percentDailyNeeds": 20
+              },
+              {
+                "title": "Protein",
+                "amount": 13,
+                "unit": "g",
+                "percentDailyNeeds": 26
+              }
+            ]
+          },
+          "nutritionSummaryBreakfast": {
+            "nutrients": [
+              {
+                "title": "Calories",
+                "amount": 0,
+                "unit": "cal",
+                "percentDailyNeeds": 0
+              },
+              {
+                "title": "Fat",
+                "amount": 0,
+                "unit": "g",
+                "percentDailyNeeds": 0
+              },
+              {
+                "title": "Carbohydrates",
+                "amount": 0,
+                "unit": "g",
+                "percentDailyNeeds": 0
+              },
+              {
+                "title": "Protein",
+                "amount": 0,
+                "unit": "g",
+                "percentDailyNeeds": 0
+              }
+            ]
+          },
+          "nutritionSummaryLunch": {
+            "nutrients": [
+              {
+                "title": "Calories",
+                "amount": 50,
+                "unit": "cal",
+                "percentDailyNeeds": 3
+              },
+              {
+                "title": "Fat",
+                "amount": 3,
+                "unit": "g",
+                "percentDailyNeeds": 4
+              },
+              {
+                "title": "Carbohydrates",
+                "amount": 6,
+                "unit": "g",
+                "percentDailyNeeds": 2
+              },
+              {
+                "title": "Protein",
+                "amount": 0,
+                "unit": "g",
+                "percentDailyNeeds": 0
+              }
+            ]
+          },
+          "nutritionSummaryDinner": {
+            "nutrients": [
+              {
+                "title": "Calories",
+                "amount": 280,
+                "unit": "cal",
+                "percentDailyNeeds": 14
+              },
+              {
+                "title": "Fat",
+                "amount": 4,
+                "unit": "g",
+                "percentDailyNeeds": 5
+              },
+              {
+                "title": "Carbohydrates",
+                "amount": 55,
+                "unit": "g",
+                "percentDailyNeeds": 18
+              },
+              {
+                "title": "Protein",
+                "amount": 13,
+                "unit": "g",
+                "percentDailyNeeds": 26
+              }
+            ]
+          },
+          "date": 1610928000,
+          "day": "Monday",
+          "items": [
+            {
+              "id": 4816327,
+              "slot": 2,
+              "position": 2,
+              "type": "PRODUCT",
+              "value": {
+                "id": 95115,
+                "title": "Campbell's Dinner Sauces Slow Cooker Sauces - Tavern Style Pot Roast",
+                "image": "https://spoonacular.com/productImages/95115-312x231.jpg",
+                "imageType": "jpg"
+              }
+            },
+            {
+              "id": 4816627,
+              "slot": 1,
+              "position": 3,
+              "type": "INGREDIENTS",
+              "value": {
+                "id": 20077,
+                "name": "bran",
+                "image": "bran.jpg"
+              }
+            },
+            {
+              "id": 4816629,
+              "slot": 3,
+              "position": 4,
+              "type": "MENU_ITEM",
+              "value": {
+                "id": 224792,
+                "title": "Whole Wheat Multigrain Bread",
+                "restaurantChain": "Au Bon Pain",
+                "servingSize": "4oz",
+                "readableServingSize": "4 oz",
+                "image": "https://images.spoonacular.com/file/wximages/224792-312x231.jpg",
+                "imageType": "jpg"
+              }
+            }
+          ]
+        },
+        {
+          "nutritionSummary": {
+            "nutrients": [
+              {
+                "title": "Calories",
+                "amount": 0,
+                "unit": "cal",
+                "percentDailyNeeds": 0
+              },
+              {
+                "title": "Fat",
+                "amount": 0,
+                "unit": "g",
+                "percentDailyNeeds": 0
+              },
+              {
+                "title": "Carbohydrates",
+                "amount": 0,
+                "unit": "g",
+                "percentDailyNeeds": 0
+              },
+              {
+                "title": "Protein",
+                "amount": 0,
+                "unit": "g",
+                "percentDailyNeeds": 0
+              }
+            ]
+          },
+          "nutritionSummaryBreakfast": {
+            "nutrients": [
+              {
+                "title": "Calories",
+                "amount": 0,
+                "unit": "cal",
+                "percentDailyNeeds": 0
+              },
+              {
+                "title": "Fat",
+                "amount": 0,
+                "unit": "g",
+                "percentDailyNeeds": 0
+              },
+              {
+                "title": "Carbohydrates",
+                "amount": 0,
+                "unit": "g",
+                "percentDailyNeeds": 0
+              },
+              {
+                "title": "Protein",
+                "amount": 0,
+                "unit": "g",
+                "percentDailyNeeds": 0
+              }
+            ]
+          },
+          "nutritionSummaryLunch": {
+            "nutrients": [
+              {
+                "title": "Calories",
+                "amount": 0,
+                "unit": "cal",
+                "percentDailyNeeds": 0
+              },
+              {
+                "title": "Fat",
+                "amount": 0,
+                "unit": "g",
+                "percentDailyNeeds": 0
+              },
+              {
+                "title": "Carbohydrates",
+                "amount": 0,
+                "unit": "g",
+                "percentDailyNeeds": 0
+              },
+              {
+                "title": "Protein",
+                "amount": 0,
+                "unit": "g",
+                "percentDailyNeeds": 0
+              }
+            ]
+          },
+          "nutritionSummaryDinner": {
+            "nutrients": [
+              {
+                "title": "Calories",
+                "amount": 0,
+                "unit": "cal",
+                "percentDailyNeeds": 0
+              },
+              {
+                "title": "Fat",
+                "amount": 0,
+                "unit": "g",
+                "percentDailyNeeds": 0
+              },
+              {
+                "title": "Carbohydrates",
+                "amount": 0,
+                "unit": "g",
+                "percentDailyNeeds": 0
+              },
+              {
+                "title": "Protein",
+                "amount": 0,
+                "unit": "g",
+                "percentDailyNeeds": 0
+              }
+            ]
+          },
+          "date": 1611014400,
+          "day": "Tuesday",
+          "items": [
+            {
+              "id": 4816281,
+              "slot": 1,
+              "position": 5,
+              "type": "CUSTOM_FOOD",
+              "value": {
+                "title": "Veal Piccatas"
+              }
+            }
+          ]
+        }
+      ]
+    }
+}

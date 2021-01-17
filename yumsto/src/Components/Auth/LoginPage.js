@@ -1,11 +1,8 @@
-
 import React from "react"
 import Navigation from '../Navigation'
-
 import LoginDetail from "./LoginPageDisplay"
 
 class LoginPage extends React.Component{
-
     constructor(){
         super()
         this.state={
@@ -38,18 +35,15 @@ class LoginPage extends React.Component{
                 <header>
                     <Navigation/>
                     <LoginDetail  
-                    registerHandler={this.registerHandler}
-                    loginHandler={this.loginHandler}
-                    login={this.state.login}
-                    register={this.state.register}
+                        registerHandler={this.registerHandler}
+                        loginHandler={this.loginHandler}
+                        login={this.state.login}
+                        register={this.state.register}
                     />
                 </header>
-                
             </React.Fragment>
         )
     }
-
-
 }
 
 

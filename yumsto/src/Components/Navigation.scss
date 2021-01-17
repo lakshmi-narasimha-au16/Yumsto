@@ -1,6 +1,7 @@
 
 .navbar{
     height: 10vh;
+    min-height: 70px;
     display: flex;
     align-items: center;
     background: rgba(91,120,199,0.5);
@@ -26,6 +27,13 @@
             padding: 0 20px;
             z-index: 12;
             }
+        li{
+            color: rgba(255,255,255, 1);
+            text-decoration: none;
+            font-size: 16px;
+            padding: 0 20px;
+            z-index: 12; 
+        }
     }
 }
 

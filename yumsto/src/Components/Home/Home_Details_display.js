@@ -59,7 +59,7 @@ const Display = (props) => {
             <React.Fragment key={details.id}>
               <Link
                 style={{ textDecoration: "none" }}
-                to={`/${details.id}`}
+                to={`/details/${details.id}`}
                 className="col"
               >
                 <img

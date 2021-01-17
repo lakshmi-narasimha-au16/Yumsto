@@ -1,5 +1,6 @@
 import './styles/SearchResultCard.scss'
 import ReactHtmlParser from 'react-html-parser'
+import {withRouter} from 'react-router-dom'
 
 
 const SearchResultCard= (props)=>{
@@ -21,13 +22,16 @@ const SearchResultCard= (props)=>{
             return props.details.image
         }
     } 
+    const detailPagePush = () =>{
+        props.history.push(`/details/${props.item.id}`)
+    }
     return(
-        <div className='searchCard'>
+        <div className='searchCard' onClick={detailPagePush}>
             <div className='cardImageContainer'>
                 <img src={imageRender()} alt="item" />
             </div>
             <div className='cardDetailContainer'>
-                <div className='item-title'>
+                <div className='item-title' >
                     {props.item.title}
                 </div>
                 <div className='item-detail'>
@@ -43,4 +47,4 @@ const SearchResultCard= (props)=>{
 
 }
 
-export default SearchResultCard
+export default withRouter(SearchResultCard)

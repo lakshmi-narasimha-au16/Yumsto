@@ -16,7 +16,10 @@ class Details extends React.Component {
       name:"",
       email:"",
       password:"",
-      error:""
+      userNameError:"",
+      passwordError:"",
+      emailError:"",
+      credentialsError:""
     }
   }
 
@@ -38,16 +41,24 @@ class Details extends React.Component {
     if(status!=="success"){
       this.setState({...this.state, error:status})
     }
-    
-    // this.props.history.push('/login')
+    else{
+      this.props.history.push('/login')
+    }
   }
   
 
   loginFormHandler = async (e)=>{
     e.preventDefault()
     const userdata = await signIn(this.state)
-    this.props.dispatch(userData(userdata))
-    this.props.dispatch(isAuthenticated(true))
+    if(userdata ===undefined){
+      this.props.dispatch(isAuthenticated(false))
+      this.setState({...this.state, credentialsError:"Invalid email or Password"})
+    }
+    else{
+      this.props.dispatch(userData(userdata))
+      this.props.dispatch(isAuthenticated(true))
+      this.props.history.push("/")
+    }
   }
 
   render(){
@@ -82,15 +93,17 @@ class Details extends React.Component {
                     <div>
                       <label htmlFor="name">NAME</label>
                       <input type="text" name="name" onChange={this.nameChange} value = {this.state.name} />
+                      <span>{this.state.usernameError}</span>
                     </div>
                     <div>
                       <label htmlFor="email">EMAIL</label>
                       <input type="email" name="email" onChange={this.emailChange} value = {this.state.email}/>
-                      <span>{this.state.error}</span>
+                      <span>{this.state.emailError}</span>
                     </div>
                     <div>
                       <label htmlFor="password">PASSWORD</label>
                       <input type="password" name="password" onChange={this.passwordChange} value = {this.state.password} />
+                      <span>{this.state.passwordError}</span>
                     </div>
 
                     <button className="regbutt" value="submit">SIGN UP</button>
@@ -107,9 +120,9 @@ class Details extends React.Component {
                       <label htmlFor="password" >PASSWORD</label>
                       <input type="password" name="password" onChange={this.passwordChange} value={this.state.password} />
                     </div>
-
+                    <span>{this.state.credentialsError}</span>
                     <button className="logbutt" value="submit">SIGN IN</button>
-
+                    
                     <p>
                       <center>OR</center>
                     </p>

@@ -1,6 +1,8 @@
 const RegUrl = "https://yumsjwt.herokuapp.com/register"
 const LoginUrl = "https://yumsjwt.herokuapp.com/auth/login"
 
+
+
 export const userData = (userdata)=>{
     return{
         type:"USERDATA",

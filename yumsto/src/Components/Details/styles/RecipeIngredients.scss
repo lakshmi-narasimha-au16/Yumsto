@@ -1,0 +1,88 @@
+.ingreTitle{
+    margin-bottom: 40px;
+    margin-top: 80px;
+    margin-left: 30px;
+}
+.ingreRow{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    margin-left: 30px;
+    margin-right: 90px;
+    column-gap: 10px;
+    row-gap: 10px;
+    text-align: center;
+    color: black;
+    .ingreCol{
+        border: 1px solid rgb(231, 222, 229);
+        .val{
+            // background-color: rgb(233, 178, 141);
+            color: rgb(211, 131, 102);
+            padding: 5px 1px;
+        }
+        img{
+            width: 80px;
+            height: 80px;
+        }
+    }
+}
+
+.equipTitle{
+    margin-bottom: 40px;
+    margin-top: 80px;
+    margin-left: 30px;
+}
+
+.equipRow{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    margin-left: 30px;
+    margin-right: 90px;
+    column-gap: 10px;
+    row-gap: 10px;
+    text-align: center;
+    color: black;
+    .equipCol{
+        border: 1px solid rgb(231, 222, 229);
+        img{
+            width: 80px;
+            height: 80px;
+        }
+    }
+}
+.instrucTitle{
+    margin-bottom: 20px;
+    margin-top: 80px;
+    margin-left: 30px;
+}
+.instructionsRow{
+    display: grid;
+    grid-template-columns: 65%;
+    margin-left: 30px;
+    row-gap: 20px;
+    color: black;
+
+}
+.nutritionFullInfoRow{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+    column-gap: 20px;
+    margin: 80px 150px;
+    .nutritionFullInfoCol{
+        // border: 1px solid rgb(194, 135, 135);
+        box-shadow: -0px 0px 5px  rgb(194, 135, 135),0px -0px 2px  rgb(194, 135, 135);
+        h3{
+            margin-bottom: 35px;
+            text-decoration: underline;
+        }
+        .enough{
+            color:#489FCB;
+        }
+        .limit{
+            color:#E46B87;
+        }
+        .report{
+            color: #56BFC0;
+        }
+    }
+}

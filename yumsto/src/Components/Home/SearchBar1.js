@@ -60,7 +60,7 @@ class SearchBar extends React.Component{
         const items = this.state.suggestions.slice(0,5)
         return items.map((item, idx)=>{
             return (
-                <li key={item.id} value={idx}>{item.title} <img src={item.image} alt=" " /></li>
+                <li key={item.id} value={idx}>{item.title} <img src={item.image} alt=" " value={idx}/></li>
             )
         })
     }
@@ -72,15 +72,17 @@ class SearchBar extends React.Component{
     suggestionSelected = async (e) => {
         await this.setState({
             ...this.state, 
-            selectedQuery:this.state.suggestions[e.target.value].title, 
+            selectedQuery:this.state.suggestions[e.target.value], 
             selected:true, 
             clear:'inputClear'
         })
         this.setState({
             ...this.state, 
             suggestions:[], 
-            query:this.state.selectedQuery
+            query:await this.state.selectedQuery.title
         })
+        this.props.history.push(`/details/${this.state.selectedQuery.id}`)
+        // console.log(this.state.selectedQuery.id)
     }
 
     searchTermDispatcher= async () => {
@@ -94,22 +96,13 @@ class SearchBar extends React.Component{
         this.props.history.push('/searchresults')
     }
 
-    componentWillUnmount = () => {
-        if (this.props.searchresults){
-            const bulk=[]
-            for (let i of this.props.searchresults.results){
-                bulk.push(i.id)
-            }
-            this.props.dispatch(ItemDetailBulk(bulk))
-        }
-        
-    }
+    
 
     render(){
         if(this.state.selected || this.state.query===''){
             return(
                 <div className='searchBar'>
-                    <input type="text" className='searchInput' value={this.state.selectedQuery} onChange={this.searchQuery}/>
+                    <input type="text" className='searchInput' value={this.state.selectedQuery.title} onChange={this.searchQuery}/>
                     
                     <span className='searchImg'>
                         <img src="./images/home/search.png" alt="search" />
@@ -121,7 +114,7 @@ class SearchBar extends React.Component{
         else{
             return(
             <div className='searchBar' >
-                <input type="text" className='searchInput' value={this.state.query} onChange={this.searchQuery}/>
+                <input type="text" className='searchInput' id="inputSearch" value={this.state.query} onChange={this.searchQuery}/>
                 <span className='searchImg' onClick={this.searchTermDispatcher}>
                     <img src="./images/home/search.png" alt="search" />
                 </span>
