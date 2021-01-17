@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import GoogleLogin from "react-google-login";
-import "./GoogleLogin.scss";
+import "./styles/GoogleLogin.scss";
 
 
 
@@ -13,12 +13,12 @@ const Login = () => {
       return;
     } else {
       console.log(resp);
-      var user_token = resp.accessToken;
-      var user_Data = resp.profileObj;
+      var user_name = resp.profileObj.name;
+      var user_email = resp.profileObj.email;
 
-      sessionStorage.setItem("google_user_token", JSON.stringify(user_token));
-      sessionStorage.setItem("google_user_obj", JSON.stringify(user_Data));
-      //   sessionStorage.setItem("Guser_obj", JSON.stringify(user_Data));
+      sessionStorage.setItem("name", JSON.stringify(user_name))
+      sessionStorage.setItem("email", JSON.stringify(user_email))
+      
       
     }
   };

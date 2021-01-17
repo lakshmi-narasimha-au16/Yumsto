@@ -26,10 +26,8 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin-left: 30px;
+    row-gap: 20px;
     
-    
-    
-
     .receipeImgCol{
         
 
@@ -43,7 +41,7 @@
             position: relative;
             margin-left: 80px;
             margin-top: 50px;
-            width: 190px;
+            width: 230px;
             padding: 20px;
             border: 1px solid rgb(214, 196, 196);
             box-shadow: 0px 0px 2px grey;
@@ -105,6 +103,69 @@
             }
         }
     }
+    
+
+
+}
+
+@media only screen and (max-width: 700px) {
+    .receipeImgRow{
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+        
+
+        img{
+            width: 100%;
+        }
+
+        .varieties{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            row-gap: 20px;
+
+        }
+    }
+
+    
+
+
+}
+@media only screen and (max-width: 600px) {
+    .receipeImgRow{
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+        margin-left: 10px;
+        
+        img{
+            width: 100%;
+        }
+
+        .varieties{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            row-gap: 20px;
+
+        }
+    }
+    .detailsTitle{
+    
+        
+        margin-left: 10px;
+        
+    }
+
+    .star {
+    
+        margin-left: 10px;
+        
+        
+        
+    }
+
+    .detailsPara{
+        margin-left: 10px;
+    }
+
     
 
 

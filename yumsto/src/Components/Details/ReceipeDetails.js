@@ -9,6 +9,10 @@ class ReceipeDetails extends React.Component {
   componentDidMount() {
     this.props.dispatch(ReceipeInfo(this.props.match.params.id));
     this.props.dispatch(ReceipeNutrition(this.props.match.params.id));
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
   }
 
   componentDidUpdate() {

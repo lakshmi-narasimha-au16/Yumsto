@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "react-router-dom"
+
 import "./styles/ReceipeDetails.scss";
 const Details = (props) => {
   const { infoApiData, nutritionApiData } = props;
@@ -64,7 +64,8 @@ const Details = (props) => {
   };
 
   return (
-    <div>
+    <div  >
+      
       <h1 className="detailsTitle">{infoApiData && infoApiData.title}</h1>
       <div className="star">
         <span className="material-icons">star</span>
@@ -78,6 +79,8 @@ const Details = (props) => {
         Made popular through Elvis Presley's film Blue Hawaiian, the Mai Tai is
         a classic tropical
       </p>
+
+      
       <div className="receipeImgRow">
         <div className="receipeImgCol">
           <img src={infoApiData && infoApiData.image} />

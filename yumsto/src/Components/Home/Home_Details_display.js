@@ -69,6 +69,8 @@ const Display = (props) => {
                 />
                 <p>{details.title}</p>
 
+                <button>MORE INFO</button>
+
                 {hoverRender(
                   details.nutrition.nutrients[0].amount,
                   details.nutrition.nutrients[0].unit,
@@ -109,7 +111,7 @@ const Display = (props) => {
                       name="cuisine"
                       id="ind"
                     />
-                    <label htmlFor="ind" className="label">
+                    <label style={{cursor:"pointer"}} htmlFor="ind" className="label">
                       Indian
                     </label>
                   </div>
@@ -121,7 +123,7 @@ const Display = (props) => {
                       name="cuisine"
                       id="ame"
                     />
-                    <label htmlFor="ame">American</label>
+                    <label style={{cursor:"pointer"}} htmlFor="ame">American</label>
                   </div>
                   <div className="cusine">
                     <input
@@ -131,7 +133,7 @@ const Display = (props) => {
                       name="cuisine"
                       id="car"
                     />
-                    <label htmlFor="car">Caribbean</label>
+                    <label style={{cursor:"pointer"}} htmlFor="car">Caribbean</label>
                   </div>
                   <div className="cusine">
                     <input
@@ -141,7 +143,7 @@ const Display = (props) => {
                       name="cuisine"
                       id="chi"
                     />
-                    <label htmlFor="chi">Chinese</label>
+                    <label style={{cursor:"pointer"}} htmlFor="chi">Chinese</label>
                   </div>
                   <div className="cusine">
                     <input
@@ -151,7 +153,7 @@ const Display = (props) => {
                       name="cuisine"
                       id="sou"
                     />
-                    <label htmlFor="sou">Southern</label>
+                    <label style={{cursor:"pointer"}} htmlFor="sou">Southern</label>
                   </div>
                 </div>
               ) : (
@@ -174,7 +176,7 @@ const Display = (props) => {
                         value="Gluten Free"
                         name="diet"
                       />
-                      <label htmlFor="glu">Gluten Free</label>
+                      <label style={{cursor:"pointer",padding:"15px 5px"}} htmlFor="glu">Gluten Free</label>
                     </div>
                     <small>Avoid wheat, barley and other grain foods</small>
                   </div>
@@ -187,7 +189,7 @@ const Display = (props) => {
                         value="Vegetarian"
                         name="diet"
                       />
-                      <label htmlFor="vegi">Vegetarian</label>
+                      <label style={{cursor:"pointer",padding:"15px 5px"}} htmlFor="vegi">Vegetarian</label>
                     </div>
                     <small>Pure Veg</small>
                   </div>
@@ -201,7 +203,7 @@ const Display = (props) => {
                         value="Lacto-Vegetarian"
                         name="diet"
                       />
-                      <label htmlFor="lact">Lacto-Vegetarian</label>
+                      <label style={{cursor:"pointer",padding:"15px 5px"}} htmlFor="lact">Lacto-Vegetarian</label>
                     </div>
                     <small>Avoid Egg</small>
                   </div>
@@ -214,7 +216,7 @@ const Display = (props) => {
                         value="Vegan"
                         name="diet"
                       />
-                      <label htmlFor="vegan">Vegan</label>
+                      <label style={{cursor:"pointer",padding:"15px 5px"}} htmlFor="vegan">Vegan</label>
                     </div>
                     <small>Avoid Meat</small>
                   </div>
@@ -238,7 +240,7 @@ const Display = (props) => {
                       value="Side Dish"
                       name="mealType"
                     />
-                    <label htmlFor="sidedish">Side Dish</label>
+                    <label style={{cursor:"pointer"}} htmlFor="sidedish">Side Dish</label>
                   </div>
                   <div className="meal">
                     <input
@@ -248,7 +250,7 @@ const Display = (props) => {
                       value="Dessert"
                       name="mealType"
                     />
-                    <label htmlFor="dessert">Dessert</label>
+                    <label style={{cursor:"pointer"}} htmlFor="dessert">Dessert</label>
                   </div>
                   <div className="meal">
                     <input
@@ -258,7 +260,7 @@ const Display = (props) => {
                       value="Breakfast"
                       name="mealType"
                     />
-                    <label htmlFor="breakfast">Breakfast</label>
+                    <label  style={{cursor:"pointer"}} htmlFor="breakfast">Breakfast</label>
                   </div>
                   <div className="meal">
                     <input
@@ -268,7 +270,7 @@ const Display = (props) => {
                       value="Snack"
                       name="mealType"
                     />
-                    <label htmlFor="snack">Snack</label>
+                    <label style={{cursor:"pointer"}} htmlFor="snack">Snack</label>
                   </div>
                 </div>
               ) : (
@@ -290,7 +292,7 @@ const Display = (props) => {
                       value="40"
                       name="readyTime"
                     />
-                    <label htmlFor="40">40</label>
+                    <label style={{cursor:"pointer"}} htmlFor="40">40</label>
                   </div>
                   <div className="readytime">
                     <input
@@ -300,7 +302,7 @@ const Display = (props) => {
                       id="60"
                       name="readyTime"
                     />
-                    <label htmlFor="60">60</label>
+                    <label style={{cursor:"pointer"}} htmlFor="60">60</label>
                   </div>
                   <div className="readytime">
                     <input
@@ -310,7 +312,7 @@ const Display = (props) => {
                       id="100"
                       name="readyTime"
                     />
-                    <label htmlFor="100">100</label>
+                    <label style={{cursor:"pointer"}} htmlFor="100">100</label>
                   </div>
                   <div className="readytime">
                     <input
@@ -320,7 +322,7 @@ const Display = (props) => {
                       id="150"
                       name="readyTime"
                     />
-                    <label htmlFor="150">150</label>
+                    <label style={{cursor:"pointer"}} htmlFor="150">150</label>
                   </div>
                 </div>
               ) : (

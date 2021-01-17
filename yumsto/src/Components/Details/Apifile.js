@@ -1,8 +1,8 @@
 import { Details } from "../../Store/Actions/detailsAction";
 const url = "https://api.spoonacular.com/recipes/";
 
-const key = "1755b7eddb8b4bc1980870df2ce80322"
-// const receipeId=this.props.match.params.id
+const key = "97405f6dd7504936bc7cc61c0adbae96"
+
 
 export const ReceipeInfo = (id) => {
   const output = fetch(

@@ -8,23 +8,23 @@ import {withRouter} from "react-router-dom"
 import {Details} from "../../Store/Actions/detailsAction"
 class SimilarReceipes extends React.Component{
 
-  constructor(){
-    super()
-    this.state={
-      dummy:""
-    }
-  }
+  // constructor(){
+  //   super()
+  //   this.state={
+  //     dummy:""
+  //   }
+  // }
 
 componentDidMount(){
 
   this.props.dispatch(SimilarReceipe(this.props.match.params.id))
 }
 
-componentDidUpdate(){
+async componentDidUpdate(){
   
   if (this.props.dummyUpdate){
     console.log("render1");
-    this.props.dispatch(SimilarReceipe(this.props.match.params.id))
+   await this.props.dispatch(SimilarReceipe(this.props.match.params.id))
     this.props.dispatch({
       type:Details.dummy,
       payload:""
@@ -47,12 +47,17 @@ dummystateupdate=()=>{
     type:Details.dummy2,
     payload:"some"
   })
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
   
 
 }
 
     render(){
-          
+          console.log(this.props);
           if (this.props.similarReceipesApiData ) {
             if (
               this.props.similarReceipesApiData.status === "failure" 

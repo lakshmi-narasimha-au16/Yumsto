@@ -1,229 +1,269 @@
 @keyframes btn {
-	0% {
-	  bottom: -1000px;
-	}
-	100% {
-	  bottom: 0px;
-	}
+  0% {
+    bottom: -1000px;
   }
-  /* .filterrow .filtercol div:nth-child(even) {
+  100% {
+    bottom: 0px;
+  }
+}
+/* .filterrow .filtercol div:nth-child(even) {
 	background-color: rgb(243, 237, 237);
   }
   .filterrow .filtercol div:nth-child(odd) {
 	background-color: rgb(248, 237, 217);
   } */
-  @keyframes col {
-	0% {
-	  right: -1000px;
-	}
-	100% {
-	  right: 0px;
-	}
+@keyframes col {
+  0% {
+    right: -1000px;
   }
-  @keyframes p {
-	0% {
-	  bottom: -1000px;
-	}
-	100% {
-	  bottom: 0px;
-	}
+  100% {
+    right: 0px;
+  }
+}
+@keyframes p {
+  0% {
+    bottom: -1000px;
+  }
+  100% {
+    bottom: 0px;
+  }
+}
+.mainrow {
+  display: grid;
+  grid-template-columns: 22% 1fr;
+  padding: 15px;
+  .filterrow {
+    .dietcol {
+      .diet {
+        margin-bottom: 10px;
+        small {
+          display: block;
+          margin-left: 1px;
+        }
+        label {
+          line-height: 0%;
+        }
+      }
+    }
+    .filtercol {
+
+      input[type=radio] {
+       display: none;
+      }
+      label{
+        padding: 2px 8px;
+        border: 1px solid rgb(90, 127, 196);
+      }
+      input {
+        margin-right: 10px;
+      }
+      .calories {
+        input {
+          display: block;
+          max-width: 100px;
+          margin-bottom: 10px;
+        }
+      }
+      label {
+        cursor: default;
+      }
+    }
+  }
+}
+.detailsRow {
+  display: grid;
+  row-gap: 15px;
+  column-gap: 10px;
+  margin-right: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-decoration: none;
+  .col {
+    color: rgb(54, 48, 48);
+    position: relative;
+    border: 1px solid rgb(211, 194, 194);
+    img {
+      padding: 10px 0;
+      position: relative;
+      animation-name: col;
+      animation-duration: 2s;
+      animation-fill-mode: forwards;
+      // border: 1px solid rgb(204, 120, 120);
+      border-radius: 5px;
+      width: 100%;
+      margin-bottom: 15px;
+      &:hover {
+        opacity: 0.3;
+      }
+    }
+    p {
+      position: relative;
+      animation-name: p;
+      animation-duration: 3s;
+      animation-fill-mode: forwards;
+      margin-left: 10px;
+    }
+    &:hover {
+      border-radius: 10px;
+      transform: scale(1.05);
+      color: blueviolet;
+      border: 1px solid burlywood;
+      transition: all 0.5s;
+    }
+
+    button{
+      border: 1px solid rgb(192, 71, 107);
+      margin-bottom: 10px;
+      padding: 5px 8px;
+      color: rgb(220, 226, 228);
+      background-color:rgb(192, 71, 107) ;
+    }
+    .caloriValues {
+      .calorie {
+        position: absolute;
+        margin-left: 20px;
+        top: 0px;
+        color: rgb(85, 77, 194);
+        bottom: 50;
+        left: 0;
+        * {
+          display: block;
+        }
+      }
+      .protein {
+        position: absolute;
+        margin-right: 20px;
+        top: 0px;
+        color: rgb(85, 77, 194);
+        right: 0;
+        * {
+          display: block;
+        }
+      }
+    }
+  }
+}
+.filterrow {
+  position: relative;
+  display: grid;
+  row-gap: 10px;
+  grid-template-columns: 1fr;
+
+  .filtercol {
+    .butt {
+      color: rgb(207, 32, 32);
+      
+      position: relative;
+      font-size: large;
+      margin-bottom: 20px;
+      animation-name: btn;
+      animation-duration: 3s;
+      animation-fill-mode: forwards;
+      border: 1px solid rgb(202, 179, 179);
+    }
+    .butt:focus{
+      outline: none;
+    }
+
+    
+    .protiens {
+      input {
+        cursor: default;
+      }
+    }
+    .calories {
+      input {
+        cursor: default;
+      }
+    }
+  }
+}
+.nomatchingrow {
+  display: grid;
+  grid-template-columns: 1fr;
+  text-align: center;
+}
+
+.protiens {
+  input {
+    display: block;
+    max-width: 100px;
+    margin-bottom: 10px;
+    border: 1px solid rgb(90, 127, 196);
+  }
+button{
+  border: 1px solid rgb(202, 117, 152);
+  width: 50px;
+}
+  
+  margin-left: 20px;
+}
+input {
+  
+  cursor: pointer;
+}
+button {
+  cursor: pointer;
+}
+.filtercol {
+  .diet {
+    margin-left: 20px;
+    
+  }
+}
+.cusine {
+  margin-left: 20px;
+}
+.meal {
+  margin-left: 20px;
+}
+.readytime {
+  margin-left: 20px;
+}
+.calories {
+  margin-left: 20px;
+
+  input{
+    border: 1px solid rgb(90, 127, 196);
+  }
+  button{
+    border: 1px solid rgb(202, 117, 152);
+    width: 50px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .detailsRow {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .detailsRow {
+    grid-template-columns: 1fr 1fr;
   }
   .mainrow {
-	display: grid;
-	grid-template-columns: 22% 1fr;
-	padding: 15px;
-	.filterrow {
-	  .dietcol {
-		.diet {
-		  margin-bottom: 10px;
-		  small {
-			display: block;
-			margin-left: 1px;
-		  }
-		  label {
-			line-height: 0%;
-		  }
-		}
-	  }
-	  .filtercol {
-		input {
-		  margin-right: 10px;
-		}
-		.calories {
-		  input {
-			display: block;
-			max-width: 100px;
-			margin-bottom: 10px;
-		  }
-		}
-		label {
-		  cursor: default;
-		}
-	  }
-	}
+    grid-template-columns: 30% 1fr;
   }
+}
+@media only screen and (max-width: 670px) {
   .detailsRow {
-	display: grid;
-	row-gap: 15px;
-	column-gap: 10px;
-	margin-right: 20px;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	// font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-	text-decoration: none;
-	.col {
-	  color: rgb(54, 48, 48);
-	  position: relative;
-	  border: 1px solid rgb(233, 225, 225);
-	  img {
-		position: relative;
-		animation-name: col;
-		animation-duration: 2s;
-		animation-fill-mode: forwards;
-		// border: 1px solid rgb(204, 120, 120);
-		border-radius: 5px;
-		width: 100%;
-		margin-bottom: 15px;
-		&:hover {
-		  opacity: 0.3;
-		}
-	  }
-	  p {
-		position: relative;
-		animation-name: p;
-		animation-duration: 3s;
-		animation-fill-mode: forwards;
-		margin-left: 10px;
-	  }
-	  &:hover {
-		border-radius: 10px;
-		transform: scale(1.05);
-		color: blueviolet;
-		border: 1px solid burlywood;
-		transition: all 0.5s;
-	  }
-	  .caloriValues {
-		.calorie {
-		  position: absolute;
-		  margin-left: 20px;
-		  top: 0px;
-		  color: rgb(85, 77, 194);
-		  bottom: 50;
-		  left: 0;
-		  * {
-			display: block;
-		  }
-		}
-		.protein {
-		  position: absolute;
-		  margin-right: 20px;
-		  top: 0px;
-		  color: rgb(85, 77, 194);
-		  right: 0;
-		  * {
-			display: block;
-		  }
-		}
-	  }
-	}
+    grid-template-columns: 1fr;
+  }
+  .mainrow {
+    grid-template-columns: 40% 1fr;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .detailsRow {
+    grid-template-columns: 1fr;
+  }
+  .mainrow {
+    grid-template-columns: 1fr;
   }
   .filterrow {
-	position: relative;
-	display: grid;
-	row-gap: 10px;
-	grid-template-columns: 1fr;
-  
-	.filtercol {
-	  .butt {
-		position: relative;
-		font-size: large;
-		margin-bottom: 20px;
-		animation-name: btn;
-		animation-duration: 3s;
-		animation-fill-mode: forwards;
-	  }
-	  .protiens {
-		input {
-		  cursor: default;
-		}
-	  }
-	  .calories {
-		input {
-		  cursor: default;
-		}
-	  }
-	}
+    grid-template-columns: 1fr;
+    .protienscol {
+      margin-bottom: 40px;
+    }
   }
-  .nomatchingrow {
-	display: grid;
-	grid-template-columns: 1fr;
-	text-align: center;
-  }
-  
-  .protiens {
-	input {
-	  display: block;
-	  max-width: 100px;
-	  margin-bottom: 10px;
-	}
-	margin-left: 20px;
-  }
-  input {
-	line-height: 0%;
-	cursor: pointer;
-  }
-  button {
-	cursor: pointer;
-  }
-  .filtercol {
-	.diet {
-	  margin-left: 20px;
-	}
-  }
-  .cusine {
-	margin-left: 20px;
-  }
-  .meal {
-	margin-left: 20px;
-  }
-  .readytime {
-	margin-left: 20px;
-  }
-  .calories {
-	margin-left: 20px;
-  }
-  @media only screen and (max-width: 992px) {
-	.detailsRow {
-	  grid-template-columns: 1fr 1fr 1fr;
-	}
-  }
-  @media only screen and (max-width: 768px) {
-	.detailsRow {
-	  grid-template-columns: 1fr 1fr;
-	}
-	.mainrow {
-	  grid-template-columns: 30% 1fr;
-	}
-  }
-  @media only screen and (max-width: 670px) {
-	.detailsRow {
-	  grid-template-columns: 1fr;
-	}
-	.mainrow {
-	  grid-template-columns: 40% 1fr;
-	}
-  }
-  @media only screen and (max-width: 500px) {
-	.detailsRow {
-	  grid-template-columns: 1fr;
-	}
-	.mainrow {
-	  grid-template-columns: 1fr;
-	}
-	.filterrow {
-	  grid-template-columns: 1fr;
-	  .protienscol {
-		margin-bottom: 40px;
-	  }
-	}
-  }
-  
+}

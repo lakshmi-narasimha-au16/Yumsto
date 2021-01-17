@@ -1,7 +1,7 @@
 import React from "react";
 import GoogleLogin from "./GoogleLogin";
 import FacebookLogin from "./FacebookLogin";
-import "./LoginPage.scss";
+import "./styles/LoginPage.scss";
 const Details = (props) => {
   const {
     registerHandler,
@@ -16,7 +16,7 @@ const Details = (props) => {
     signinInputEmail,
     signinInputPassword,
     signInHandler,
-    signinError
+    signinError,
   } = props;
   const FlipClass = login && "flip";
   const RegTitleClass = register && "extregtitle";
@@ -25,7 +25,8 @@ const Details = (props) => {
   return (
     <div className="loginRow">
       <div className="col">
-        <img src="https://www.wholesomeyum.com/wp-content/uploads/2019/09/wholesomeyum-keto-chaffles-recipe-sweet-savory-5-ways-24.jpg" />
+        <img src="https://www.wholesomeyum.com/wp-content/uploads/2019/09/wholesomeyum-keto-chaffles-recipe-sweet-savory-5-ways-24.jpg" alt="image" />
+        
       </div>
       <div className="col loginCol">
         <div className="contentRow">
@@ -81,18 +82,30 @@ const Details = (props) => {
                   <div className="login">
                     <div>
                       <label htmlFor="email">EMAIL</label>
-                      <input onChange={signinInputEmail} type="email" id="email" />
+                      <input
+                        onChange={signinInputEmail}
+                        type="email"
+                        id="email"
+                      />
                     </div>
                     <div>
                       <label htmlFor="password">PASSWORD</label>
-                      <input onChange={signinInputPassword} type="password" id="password" />
+                      <input
+                        onChange={signinInputPassword}
+                        type="password"
+                        id="password"
+                      />
                     </div>
-                <small className="signinError">{signinError}</small>
-                    <button onClick={signInHandler} className="logbutt">SIGN IN</button>
+                    <small className="signinError">{signinError}</small>
+                    <button onClick={signInHandler} className="logbutt">
+                      SIGN IN
+                    </button>
 
-                    <center> <p>
-                      OR
-                    </p></center>
+                    <center>
+                      {" "}
+                      <p>OR</p>
+                    </center>
+
                     <div className="gfbButtGrp">
                       <GoogleLogin className="googlelogin" />
                       <FacebookLogin className="facebooklogin" />
