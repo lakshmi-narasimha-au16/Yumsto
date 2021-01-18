@@ -1,4 +1,4 @@
-import { apiKey, apiKey1 } from './apikey'
+import { apiKey1 } from './apikey'
 
 const base_url='https://api.spoonacular.com'
 // const testing='http://localhost:8900/searchresults'

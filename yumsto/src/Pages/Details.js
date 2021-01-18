@@ -1,29 +1,34 @@
-import ReceipeInfo from "../Components/Details/ReceipeDetails";
-import ReceipeIngredients from "../Components/Details/ReceipeIngredients";
-import Similarreceipe from "../Components/Details/SimilarReceipes";
 
-import React from "react";
-const Detail =()=> {
- 
+import React, { lazy, Suspense } from "react";
 
- 
-
-    return (
-      <div>
-        <ReceipeInfo  />
-  <ReceipeIngredients />
-  <Similarreceipe />
-      </div>
-    );
-    
-  
-
- 
-  
-
-
-}
+const ReceipeInfo = React.lazy(()=> import("../Components/Details/ReceipeDetails"))
+const ReceipeIngredients = React.lazy(()=> import("../Components/Details/ReceipeIngredients"))
+const Similarreceipe = React.lazy(()=> import("../Components/Details/SimilarReceipes"))
 
 
 
-export default Detail
+const Detail = () => {
+
+  const Loader=()=>{
+    return(
+      <div className="nodatarow">
+          <div className="nodatacol">
+            <img src="https://motiongraphicsphoebe.files.wordpress.com/2018/10/tumblr_nurhzkukqo1syz1nro1_500.gif" />
+          </div>
+        </div>
+    )
+  }
+
+
+  return (
+    <div>
+      <Suspense fallback={Loader()}>
+      <ReceipeInfo />
+      <ReceipeIngredients />
+      <Similarreceipe />
+      </Suspense>
+    </div>
+  );
+};
+
+export default Detail;

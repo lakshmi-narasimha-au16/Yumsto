@@ -9,7 +9,7 @@ const Routes= ()=>{
         <BrowserRouter>
             {/* <Route path={'/'} exact component={Home} /> */}
             {/* <Route path={'/searchresults'} exact component={SearchResults} /> */}
-            {/* <Route path={'/details/:id'} exact component={Details} /> */}
+            <Route path={'/details/:id'} exact component={Details} />
             <Route path={'/login'} exact component={Login} />
             <Route path={'/addmeal'} exact component={AddMeal} />
         </BrowserRouter>
