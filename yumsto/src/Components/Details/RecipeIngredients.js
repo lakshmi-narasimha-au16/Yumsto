@@ -42,7 +42,7 @@ class Ingredients extends React.Component {
         );
       } else {
         return (
-          <div>
+          <>
             <Detail
               ingredientsApiData={this.props.ingredientsApiData}
               equipmentApiData={this.props.equipmentApiData}
@@ -50,7 +50,7 @@ class Ingredients extends React.Component {
               nutritionApiData={this.props.nutritionApiData}
               tasteWidgetApiData={this.props.tasteWidgetApiData}
             />
-          </div>
+          </>
         );
       }
     } else {

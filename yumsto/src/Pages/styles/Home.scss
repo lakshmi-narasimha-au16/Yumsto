@@ -6,7 +6,17 @@ header{
     display: grid;
     grid-template-columns: 1fr;
     .searchBar{
-        justify-self: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        h1{
+            color: white;
+        }
+        align-self: center;
         width: 60vw;
     }
+}
+main{
+    margin: 5px;
 }

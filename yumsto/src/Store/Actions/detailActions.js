@@ -1,5 +1,5 @@
 import { Details } from "../../Store/Reducers/details_reducer";
-import { apiKey1 } from './apikey'
+import { apiKey1, apiKey } from './apikey'
 
 const url = "https://api.spoonacular.com/recipes/";
 const key = "1755b7eddb8b4bc1980870df2ce80322"
@@ -8,7 +8,7 @@ const key = "1755b7eddb8b4bc1980870df2ce80322"
 
 export const RecipeInfo = (id) => {
   const output = fetch(
-    `https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey1}`
+    `https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}`
   ).then((resp) => resp.json());
   return {
     type: Details.infoApi,
@@ -18,7 +18,7 @@ export const RecipeInfo = (id) => {
 
 export const RecipeNutrition = (id) => {
   const output1 = fetch(
-    `https://api.spoonacular.com/recipes/${id}/nutritionWidget.json?apiKey=${apiKey1}`
+    `https://api.spoonacular.com/recipes/${id}/nutritionWidget.json?apiKey=${apiKey}`
   ).then((res) => res.json());
   return {
     type: Details.nutritionApi,
@@ -28,7 +28,7 @@ export const RecipeNutrition = (id) => {
 
 export const RecipeIngredients = (id) => {
   const output2 = fetch(
-    `https://api.spoonacular.com/recipes/${id}/ingredientWidget.json?apiKey=${apiKey1}`
+    `https://api.spoonacular.com/recipes/${id}/ingredientWidget.json?apiKey=${apiKey}`
   ).then((res) => res.json());
   return {
     type: Details.ingredientsApi,
@@ -38,7 +38,7 @@ export const RecipeIngredients = (id) => {
 
 export const RecipeEquipment = (id) => {
   const output3 = fetch(
-    `https://api.spoonacular.com/recipes/${id}/equipmentWidget.json?apiKey=${apiKey1}`
+    `https://api.spoonacular.com/recipes/${id}/equipmentWidget.json?apiKey=${apiKey}`
   ).then((res) => res.json());
   return {
     type: Details.equipmentApi,
@@ -48,7 +48,7 @@ export const RecipeEquipment = (id) => {
 
 export const RecipeTasteWidget = (id) => {
   const output4 = fetch(
-    `https://api.spoonacular.com/recipes/${id}/tasteWidget.json?apiKey=${apiKey1}`
+    `https://api.spoonacular.com/recipes/${id}/tasteWidget.json?apiKey=${apiKey}`
   ).then((res) => res.json());
   return {
     type: Details.tasteWidgetApi,
@@ -56,9 +56,9 @@ export const RecipeTasteWidget = (id) => {
   }
 }
 
-export const SimilarRecipe = (id) => {
-  const output5 = fetch(
-    `https://api.spoonacular.com/recipes/${id}/similar?apiKey=${apiKey1}`
+export const SimilarRecipe = async (id) => {
+  const output5 = await fetch(
+    `https://api.spoonacular.com/recipes/${id}/similar?apiKey=${apiKey}`
   ).then((res) => res.json());
   return {
     type: Details.similarrecipesApi,

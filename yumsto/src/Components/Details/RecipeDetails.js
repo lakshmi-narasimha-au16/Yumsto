@@ -39,12 +39,12 @@ class RecipeDetails extends React.Component {
         );
       } else {
         return (
-          <div>
+          <React.Fragment>
             <Detail
               infoApiData={this.props.infoApiData}
               nutritionApiData={this.props.nutritionApiData}
             />
-          </div>
+          </React.Fragment>
         );
       }
     } else {

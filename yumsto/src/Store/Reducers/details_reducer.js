@@ -16,7 +16,7 @@ const DetailsStore = {
   ingredientsApiS: "",
   equipmentApiS: "",
   tasteWidgetApiS: "",
-  similarReceipesApiS: "",
+  similarRecipesApiS: "",
   dummyUpdateS:"",
   dummy1UpdateS:"",
   dummy2UpdateS:""
@@ -52,10 +52,10 @@ state = state || DetailsStore;
         ...state,
         tasteWidgetApiS: action.payload,
         };
-    case Details.similarreceipesApi:
+    case Details.similarrecipesApi:
         return {
         ...state,
-        similarReceipesApiS: action.payload,
+        similarRecipesApiS: action.payload,
         };
     case Details.dummy:
         return {

@@ -42,7 +42,8 @@ class Details extends React.Component {
       this.setState({...this.state, error:status})
     }
     else{
-      this.props.history.push('/login')
+      this.props.loginHandler()
+      this.setState({...this.state, email:"", password:""})
     }
   }
   
@@ -123,13 +124,13 @@ class Details extends React.Component {
                     <span>{this.state.credentialsError}</span>
                     <button className="logbutt" value="submit">SIGN IN</button>
                     
-                    <p>
+                    {/* <p>
                       <center>OR</center>
                     </p>
                     <div className="gfbButtGrp">
                       <GoogleLogin className="googlelogin" />
                       <FacebookLogin className="facebooklogin" />
-                    </div>
+                    </div> */}
                   </form>
                 )}
               </div>

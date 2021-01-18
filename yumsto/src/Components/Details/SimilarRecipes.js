@@ -13,8 +13,8 @@ class SimilarRecipes extends React.Component{
     }
   }
 
-componentDidMount(){
-  this.props.dispatch(SimilarRecipe(this.props.match.params.id))
+async componentDidMount(){
+  await this.props.dispatch(SimilarRecipe(this.props.match.params.id))
 }
 
 componentDidUpdate(){
@@ -49,6 +49,7 @@ dummystateupdate=()=>{
             if (
               this.props.similarRecipesApiData.status === "failure" 
             ) {
+              console.log(this.props.similarRecipesApiData.status)
               return (
                 <div className="nodatarow">
                   <div className="nodatacol">
@@ -67,6 +68,7 @@ dummystateupdate=()=>{
               );
             }
           } else {
+            console.log(this.props.similarRecipesApiData)
             return (
               <div className="nodatarow">
                 <div className="nodatacol">

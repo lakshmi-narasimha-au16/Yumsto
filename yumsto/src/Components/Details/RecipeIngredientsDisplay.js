@@ -1,5 +1,6 @@
 import React from "react";
-import "./styles/RecipeIngredients.scss";
+// import "./styles/RecipeIngredients.scss";
+import "./styles/lucky/RecipeIngredients.scss";
 
 const Detail = (props) => {
   const { ingredientsApiData, equipmentApiData,infoApiData,nutritionApiData,tasteWidgetApiData } = props;
@@ -113,13 +114,19 @@ const Detail = (props) => {
   }
 
   return (
-    <div>
-      <h2 className="ingreTitle">Ingredients</h2>
-      <div className="ingreRow">{renderIngredients()}</div>
-      <h2 className="equipTitle">Equipment</h2>
-      <div className="equipRow">{renderEquipment()}</div>
-      <h2 className="instrucTitle">Directions</h2>
-      <div className="instructionsRow">{renderInstructions()}</div>
+    <div className="ingredientsContainer">
+      <div className="ingredientsChild">
+        <h2 className="ingreTitle">Ingredients</h2>
+        <div className="ingreRow">{renderIngredients()}</div>
+      </div>
+      <div className="ingredientsChild">
+        <h2 className="equipTitle">Equipment</h2>
+        <div className="equipRow">{renderEquipment()}</div>
+      </div>
+      <div className="ingredientsChild">
+        <h2 className="instrucTitle">Directions</h2>
+        <div className="instructionsRow">{renderInstructions()}</div>
+      </div>
       <div className="nutritionFullInfoRow" id="godNutrients">
         <div className="nutritionFullInfoCol">
           <h3  className="enough">Get Enough Of These</h3>

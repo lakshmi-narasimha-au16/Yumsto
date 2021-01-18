@@ -8,8 +8,9 @@ const Home = ()=>{
     const bgStyle = { 
         backgroundImage: `url(${process.env.PUBLIC_URL + './images/home/header-bg.jpg'})`,
         backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center',
+        backgroundPosition: 'cover',
         backgroundAttachment: 'fixed',
+        width:"100%",
         height: '50vh',
     }
 
@@ -17,7 +18,11 @@ const Home = ()=>{
         <React.Fragment>
             <header style={bgStyle}>
                 <Navigation />
-                <SearchBar className="searchBar"/>
+                <div className="searchBar">
+                    <h1>Search Recipes</h1>
+                    <SearchBar />
+                </div>
+                
             </header>
             <main>
                 <HomeDetail className="homeContent"/>

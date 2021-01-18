@@ -5,6 +5,7 @@ import { apiKey1 } from "../../../Store/Actions/apikey"
 import { addMealPlan, getMealPlans} from '../../../Store/Actions/addMealActions'
 import { connect } from "react-redux"
 import MealPlans from "./MealPlans.js"
+import "./styles/Addmeal.scss"
 
 const date = new Date()
 const base_url = "https://api.spoonacular.com/"
@@ -114,13 +115,19 @@ class Addmeal extends React.Component{
     }
 
     render(){
+        const bgStyle = { 
+            backgroundImage: `url(${process.env.PUBLIC_URL + './images/mealpage/mealPageBg.jpg'})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
+            backgroundAttachment: 'fixed',
+            height: '50vh',
+        }
         if(this.props.isLoggedIn !==true || this.props.isLoggedIn ===undefined){
             this.props.history.push("/login")
         }
-        console.log(this.props)
         return(
             <React.Fragment>
-                <header>
+                <header style={bgStyle}>
                     <Navigation />
                     <form className="mealPlanForm" onSubmit={this.addMealFormHandler}>
                         <div className="fields">
@@ -156,8 +163,9 @@ class Addmeal extends React.Component{
                             ) }
                             
                         </div>
-                        
-                        <button className="addMealButton" value="submit">Add Meal</button>
+                        <div className="fields">
+                            <button className="addMealButton" value="submit">Add Meal</button>
+                        </div>
                     </form>
                 </header>
                 <main>

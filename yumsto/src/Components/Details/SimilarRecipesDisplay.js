@@ -1,6 +1,7 @@
 import React from "react"
 import {Link} from "react-router-dom"
-import "./styles/SimilarRecipes.scss"
+// import "./styles/SimilarRecipes.scss"
+import "./styles/lucky/SimilarRecipes.scss"
 
 
 const Detail=(props)=>{
@@ -25,7 +26,7 @@ const Detail=(props)=>{
     }
 
     return(
-        <div>
+        <div className="similarRecipesContainer">
             <h2 className="similarRecipesTitle">Similar Recipes</h2>
             <div className="similarRecipesRow">
                 {renderSimilarRecipes()}

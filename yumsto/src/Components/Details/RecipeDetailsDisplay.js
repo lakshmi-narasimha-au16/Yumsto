@@ -1,6 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom"
-import "./styles/RecipeDetails.scss";
+import "./styles/lucky/RecipeDetails.scss";
+// import './styles/RecipeDetails.scss'
 
 
 const Details = (props) => {
@@ -11,8 +12,7 @@ const Details = (props) => {
         return infoApiData.cuisines.map((cusine,idx) => {
           return (
             <React.Fragment key={idx}>
-              
-              <p>{cusine}</p>
+              {cusine}
             </React.Fragment>
           );
         })
@@ -25,8 +25,7 @@ const Details = (props) => {
         return infoApiData.dishTypes.map((dish,idx) => {
           return (
             <React.Fragment key={idx}>
-              
-              <p>{dish}</p>
+              {dish}
             </React.Fragment>
           );
         });
@@ -39,8 +38,7 @@ const Details = (props) => {
         return infoApiData.diets.map((diet,idx) => {
           return (
             <React.Fragment key={idx}>
-              
-              <p>{diet}</p>
+              {diet}
             </React.Fragment>
           );
         });
@@ -49,12 +47,12 @@ const Details = (props) => {
   };
   const occasions = () => {
     if (infoApiData) {
+      console.log(infoApiData)
       if (infoApiData.occasions.length > 0) {
         return infoApiData.occasions.map((occasion,idx) => {
           return (
             <React.Fragment key={idx}>
-              
-              <p>{occasion}</p>
+              {occasion}
             </React.Fragment>
           );
         });
@@ -63,7 +61,7 @@ const Details = (props) => {
   };
 
   return (
-    <div>
+    <div className="recipeDetailContainer">
       <h1 className="detailsTitle">{infoApiData && infoApiData.title}</h1>
       <div className="star">
         <span className="material-icons">star</span>
@@ -87,8 +85,10 @@ const Details = (props) => {
               <strong>Health Score:</strong>{" "}
               {infoApiData && infoApiData.healthScore}
             </p>
-            <p>
-              <strong>Prep:</strong> {infoApiData && infoApiData.readyInMinutes}{" "}
+            <p style={{position:"relative"}}>
+              <strong style={{marginRight:"20px"}}>Prep<span style={{width:"30px", Top:"5px", position:"absolute"}} className="material-icons timer">
+                  schedule
+            </span></strong><strong> : </strong> {infoApiData && infoApiData.readyInMinutes}{" "}
               min
             </p>
             <p>
@@ -111,20 +111,18 @@ const Details = (props) => {
             </p>
             <a href="#godNutrients">
               <div className="morenutriInfo">
-                <center>Nutrition Info</center>
+                More Nutrition Info
               </div>
             </a>
-            <span className="material-icons timer">
-                  schedule
-            </span>
+            
           </div>
         </div>
         <div className="recipeImgCol">
           <div className="varieties">
-            <div><p>cuisines</p>{cusines()}</div>
-            <div><p>dishTypes</p>{dishTypes()}</div>
-            <div><p>diets</p>{diets()}</div>
-            <div><p>occasions</p>{occasions()}</div>
+            <div>cuisines  {cusines()}</div>
+            <div>dishTypes  {dishTypes()}</div>
+            <div>diets  {diets()}</div>
+            <div>occasions  {occasions()}</div>
           </div>
         </div>
       </div>
