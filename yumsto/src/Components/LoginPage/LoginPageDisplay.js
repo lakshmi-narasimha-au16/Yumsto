@@ -25,7 +25,7 @@ const Details = (props) => {
   return (
     <div className="loginRow">
       <div className="col">
-        <img src="https://www.wholesomeyum.com/wp-content/uploads/2019/09/wholesomeyum-keto-chaffles-recipe-sweet-savory-5-ways-24.jpg" alt="image" />
+        <img src="https://www.wholesomeyum.com/wp-content/uploads/2019/09/wholesomeyum-keto-chaffles-recipe-sweet-savory-5-ways-24.jpg" alt="designImage" />
         
       </div>
       <div className="col loginCol">

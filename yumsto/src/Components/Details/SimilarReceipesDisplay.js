@@ -19,6 +19,7 @@ const Detail = (props) => {
                 
                   <img
                     src={`https://spoonacular.com/recipeImages/${receipe.id}-240x150.jpg`}
+                  alt="recipeImage"
                   />
                 
                 <p>{receipe.title}</p>

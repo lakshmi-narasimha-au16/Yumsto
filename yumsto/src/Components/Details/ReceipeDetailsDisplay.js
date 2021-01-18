@@ -83,7 +83,7 @@ const Details = (props) => {
       
       <div className="receipeImgRow">
         <div className="receipeImgCol">
-          <img src={infoApiData && infoApiData.image} />
+          <img src={infoApiData && infoApiData.image} alt="recipeImage" />
         </div>
 
         <div className="receipeImgCol">

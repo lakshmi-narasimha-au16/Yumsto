@@ -37,7 +37,7 @@ class Ingredients extends React.Component {
         return (
           <div className="nodatarow">
             <div className="nodatacol">
-              <img src="https://motiongraphicsphoebe.files.wordpress.com/2018/10/tumblr_nurhzkukqo1syz1nro1_500.gif" />
+              <img src="https://motiongraphicsphoebe.files.wordpress.com/2018/10/tumblr_nurhzkukqo1syz1nro1_500.gif" alt="Loader" />
             </div>
           </div>
         );
@@ -58,7 +58,7 @@ class Ingredients extends React.Component {
       return (
         <div className="nodatarow">
           <div className="nodatacol">
-            <img src="https://motiongraphicsphoebe.files.wordpress.com/2018/10/tumblr_nurhzkukqo1syz1nro1_500.gif" />
+            <img src="https://motiongraphicsphoebe.files.wordpress.com/2018/10/tumblr_nurhzkukqo1syz1nro1_500.gif" alt="Loader" />
           </div>
         </div>
       );

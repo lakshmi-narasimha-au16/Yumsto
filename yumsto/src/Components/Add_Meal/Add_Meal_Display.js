@@ -5,7 +5,6 @@ import "./styles/Add_Meal.scss";
 const Details = (props) => {
   // console.log(props);
   const {
-    dietSelectHandler,
     apiData,
     searchInputHandler,
     searchClickHandler,
@@ -31,7 +30,7 @@ const Details = (props) => {
 
   const renderHover = (imgUrl, passingId) => {
     if (passingId === imageId) {
-      return <img className="resultlargeImg" src={imgUrl} />;
+      return <img className="resultlargeImg" src={imgUrl} alt="recipeHoverImage" />;
     }
   };
 
@@ -69,7 +68,7 @@ const Details = (props) => {
         return viewMealsData.map((meal, idx) => {
           return (
             <div key={idx} className="viewCol">
-              <img src={meal.image} />
+              <img src={meal.image} alt="recipeImage" />
               <p>{meal.title}</p>
               <Link to={`/details/${meal.id}`}>
                 <button>MORE INFO</button>
@@ -175,9 +174,7 @@ const Details = (props) => {
             >
               search
             </span>
-            <small style={{ display: "block", color: "yellow" }}>
-              {mealSelectionError}
-            </small>
+            
           </div>
           <div className="searchresultDiv">{renderSearchResults(apiData)}</div>
 
@@ -185,16 +182,17 @@ const Details = (props) => {
             <strong>Selected Receipe :</strong>
           </label>
           <h4 className="receipe">{choosenReceipe}</h4>
-          
+          <small style={{ display: "block", color: "yellow" }}>
+              {mealSelectionError}
+            </small>
           <h4 style={{ color: "yellow" }}>{duplicateRecipe}</h4>
+         
           {checkingDuplicateRecipe()}
-          
+         
         </div>
       </div>
 
-      <h2 id="shopping-list" className="shopping-list">
-        Shopping List
-      </h2>
+      <h2 className="shopping-list">Shopping List</h2>
       <div className="dataFilterRow">
         <div className="filterCol">
           <select onChange={filterViewMealData} defaultValue="Choose MealBox">
@@ -225,6 +223,7 @@ const Details = (props) => {
       </div>
 
       <div className="viewMealsrow">{renderViewMeals()}</div>
+      <div id="shopping-list"></div>
     </div>
   );
 };

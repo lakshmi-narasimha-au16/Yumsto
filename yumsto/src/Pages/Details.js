@@ -1,5 +1,5 @@
 
-import React, { lazy, Suspense } from "react";
+import React, { Suspense } from "react";
 
 const ReceipeInfo = React.lazy(()=> import("../Components/Details/ReceipeDetails"))
 const ReceipeIngredients = React.lazy(()=> import("../Components/Details/ReceipeIngredients"))
@@ -13,7 +13,7 @@ const Detail = () => {
     return(
       <div className="nodatarow">
           <div className="nodatacol">
-            <img src="https://motiongraphicsphoebe.files.wordpress.com/2018/10/tumblr_nurhzkukqo1syz1nro1_500.gif" />
+            <img src="https://motiongraphicsphoebe.files.wordpress.com/2018/10/tumblr_nurhzkukqo1syz1nro1_500.gif" alt="Loader" />
           </div>
         </div>
     )

@@ -15,6 +15,7 @@ const Detail = (props) => {
               </p>
               <img
                 src={`https://spoonacular.com/cdn/ingredients_100x100/${ingre.image}`}
+              alt="ingredientsImage"
               />
               <p>{ingre.name}</p>
             </div>
@@ -34,6 +35,7 @@ const Detail = (props) => {
             <div className="equipCol" key={idx}>
               <img
                 src={`https://spoonacular.com/cdn/ingredients_100x100/${equip.image}`}
+              alt="equipmentImage"
               />
 
               <p>{equip.name}</p>

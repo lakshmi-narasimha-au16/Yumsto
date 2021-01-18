@@ -1,5 +1,5 @@
 import { Details } from "../../Store/Actions/detailsAction";
-const url = "https://api.spoonacular.com/recipes/";
+
 
 const key = "97405f6dd7504936bc7cc61c0adbae96"
 

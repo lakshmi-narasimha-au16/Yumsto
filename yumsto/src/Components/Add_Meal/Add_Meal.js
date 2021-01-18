@@ -1,11 +1,12 @@
 import React from "react";
-import "./styles/Add_Meal1.scss"
+import "./styles/Add_Meal1.scss";
 import {
   MealsApiData,
   BulkInfo,
   fetchAgainMealsApiData,
   SearchApi,
 } from "./Apifile";
+
 import Details from "./Add_Meal_Display";
 import { AddMeal } from "../../Store/Actions/addamealAction";
 import { connect } from "react-redux";
@@ -15,17 +16,12 @@ class AddingMeal extends React.Component {
     super();
 
     this.state = {
-      apiData: "",
       searchInputVal: "",
       diet: "",
       choosenReceipe: "",
       imageId: "",
       mealSelectionError: "",
-      mealsApi: "",
-      dummy: "",
       didMountDummy: "",
-      viewMealsData: "",
-      mealsDataIdsArray: "",
       viewfilterMealType: "",
       viewfilterDietType: "",
       viewfilterDate: "",
@@ -57,30 +53,130 @@ class AddingMeal extends React.Component {
     if (this.state.didMountDummy) {
       let array = [];
 
-      for (var i = 0; i < this.props.mealsApi.meals.length; i++) {
+      if (
+        !this.state.viewfilterMealType &&
+        !this.state.viewfilterDietType &&
+        !this.state.viewfilterDate
+      ) {
+        for (var p = 0; p < this.props.mealsApi.meals.length; p++) {
+          if (
+            this.props.mealsApi.meals[p].usermail ===
+            JSON.parse(sessionStorage.getItem("email"))
+          ) {
+            array.push(this.props.mealsApi.meals[p].receipeId);
+          }
+        }
+      } else {
         if (
-          this.props.mealsApi.meals[i].usermail ===
-          JSON.parse(sessionStorage.getItem("email"))
+          this.state.viewfilterMealType &&
+          this.state.viewfilterDietType &&
+          this.state.viewfilterDate
         ) {
-          array.push(this.props.mealsApi.meals[i].receipeId);
+          for (var i = 0; i < this.props.mealsApi.meals.length; i++) {
+            if (
+              this.props.mealsApi.meals[i].usermail ===
+                JSON.parse(sessionStorage.getItem("email")) &&
+              this.props.mealsApi.meals[i].mealBoxType ===
+                this.state.viewfilterMealType &&
+              this.props.mealsApi.meals[i].dietType ===
+                this.state.viewfilterDietType &&
+              this.props.mealsApi.meals[i].date === this.state.viewfilterDate
+            ) {
+              console.log("1,2,3");
+              array.push(this.props.mealsApi.meals[i].receipeId);
+            }
+          }
+        } else if (this.state.viewfilterMealType && this.state.viewfilterDate) {
+          for (var j = 0; j < this.props.mealsApi.meals.length; j++) {
+            if (
+              this.props.mealsApi.meals[j].usermail ===
+                JSON.parse(sessionStorage.getItem("email")) &&
+              this.props.mealsApi.meals[j].date === this.state.viewfilterDate &&
+              this.props.mealsApi.meals[j].mealBoxType ===
+                this.state.viewfilterMealType
+            ) {
+              console.log("1,3");
+              array.push(this.props.mealsApi.meals[j].receipeId);
+            }
+          }
+        } else if (this.state.viewfilterDietType && this.state.viewfilterDate) {
+          for (var k = 0; k < this.props.mealsApi.meals.length; k++) {
+            if (
+              this.props.mealsApi.meals[k].usermail ===
+                JSON.parse(sessionStorage.getItem("email")) &&
+              this.props.mealsApi.meals[k].date === this.state.viewfilterDate &&
+              this.props.mealsApi.meals[k].dietType ===
+                this.state.viewfilterDietType
+            ) {
+              console.log("2,3");
+              array.push(this.props.mealsApi.meals[k].receipeId);
+            }
+          }
+        } else if (
+          this.state.viewfilterMealType &&
+          this.state.viewfilterDietType
+        ) {
+          for (var l = 0; l < this.props.mealsApi.meals.length; l++) {
+            if (
+              this.props.mealsApi.meals[l].usermail ===
+                JSON.parse(sessionStorage.getItem("email")) &&
+              this.props.mealsApi.meals[l].mealBoxType ===
+                this.state.viewfilterMealType &&
+              this.props.mealsApi.meals[l].dietType ===
+                this.state.viewfilterDietType
+            ) {
+              console.log("1,2");
+              array.push(this.props.mealsApi.meals[l].receipeId);
+            }
+          }
+        } else if (this.state.viewfilterMealType) {
+          for (var m = 0; m < this.props.mealsApi.meals.length; m++) {
+            if (
+              this.props.mealsApi.meals[m].usermail ===
+                JSON.parse(sessionStorage.getItem("email")) &&
+              this.props.mealsApi.meals[m].mealBoxType ===
+                this.state.viewfilterMealType
+            ) {
+              console.log("1");
+              array.push(this.props.mealsApi.meals[m].receipeId);
+            }
+          }
+        } else if (this.state.viewfilterDietType) {
+          for (var n = 0; n < this.props.mealsApi.meals.length; n++) {
+            if (
+              this.props.mealsApi.meals[n].usermail ===
+                JSON.parse(sessionStorage.getItem("email")) &&
+              this.props.mealsApi.meals[n].dietType ===
+                this.state.viewfilterDietType
+            ) {
+              console.log("2");
+              array.push(this.props.mealsApi.meals[n].receipeId)
+            }
+          }
+        } else if (this.state.viewfilterDate) {
+          for (var o = 0; o < this.props.mealsApi.meals.length; o++) {
+            if (
+              this.props.mealsApi.meals[o].usermail ===
+                JSON.parse(sessionStorage.getItem("email")) &&
+              this.props.mealsApi.meals[o].date === this.state.viewfilterDate
+            ) {
+              console.log("3");
+              array.push(this.props.mealsApi.meals[o].receipeId);
+            }
+          }
         }
       }
 
-      this.setState({
-        ...this.state,
-        didMountDummy: "",
-        dummy: "some",
-        mealsDataIdsArray: array,
-      });
-    }
-
-    if (this.state.dummy) {
-      if (this.state.mealsDataIdsArray.length > 0) {
-        this.props.dispatch(BulkInfo(this.state.mealsDataIdsArray));
-        this.setState({
-          ...this.state,
-          dummy: "",
-        });
+      if (array) {
+        console.log(array);
+        if (array.length > 0) {
+          let duplicatesFilter = [...new Set(array)];
+          this.props.dispatch(BulkInfo(duplicatesFilter));
+          this.setState({
+            ...this.state,
+            didMountDummy: "",
+          });
+        }
       }
     }
   }
@@ -156,7 +252,7 @@ class AddingMeal extends React.Component {
     });
   };
 
-  addmealClickHandler = () => {
+  addmealClickHandler = async () => {
     let cnt = 0;
     for (var i = 0; i < this.props.mealsApi.meals.length; i++) {
       if (
@@ -169,12 +265,22 @@ class AddingMeal extends React.Component {
       }
     }
 
-    if (!this.state.mealsData.receipeId || cnt > 0) {
+    if (
+      !this.state.mealsData.receipeId ||
+      !this.state.mealsData.mealBoxType ||
+      !this.state.mealsData.dietType ||
+      !this.state.mealsData.date ||
+      cnt > 0
+    ) {
       console.log("inside");
-      if (!this.state.mealsData.receipeId) {
+      console.log(cnt);
+      if (!this.state.mealsData.receipeId || !this.state.mealsData.mealBoxType ||
+        !this.state.mealsData.dietType ||
+        !this.state.mealsData.date) {
+          console.log("field");
         this.setState({
           ...this.state,
-          mealSelectionError: "Search and select your food",
+          mealSelectionError: "Please fill all fields",
         });
       }
 
@@ -196,14 +302,18 @@ class AddingMeal extends React.Component {
         type: AddMeal.mealsApi,
         payload: val,
       });
-      console.log("2");
 
-      this.props.dispatch(fetchAgainMealsApiData(this.props.mealsApi));
+      await this.props.dispatch(fetchAgainMealsApiData(this.props.mealsApi));
+      const input = this.state.mealsData;
+      input.receipeId = "";
+      input.receipeTitle = "";
       this.setState({
         ...this.state,
+        didMountDummy: "some",
         mealSelectionError: "",
         duplicateRecipe: "",
-        didMountDummy: "some",
+        input,
+        choosenReceipe: "",
       });
     }
   };
@@ -257,63 +367,63 @@ class AddingMeal extends React.Component {
 
   render() {
     console.log(this.state);
-    
-      
-        if (this.props.viewMealsData) {
-          if (this.props.viewMealsData.status === "failure" ) {
+
+    if (this.props.viewMealsData) {
+      if (this.props.viewMealsData.status === "failure") {
         return (
           <div className="nodatarow">
             <div className="nodatacol">
-              <img src="https://motiongraphicsphoebe.files.wordpress.com/2018/10/tumblr_nurhzkukqo1syz1nro1_500.gif" />
+              <img
+                src="https://motiongraphicsphoebe.files.wordpress.com/2018/10/tumblr_nurhzkukqo1syz1nro1_500.gif"
+                alt="Loader"
+              />
             </div>
           </div>
         );
       } else {
         return (
           <div>
-          <Details
-          dietSelectHandler={this.dietSelectHandler}
-          apiData={this.props.apiData}
-          searchInputVal={this.state.searchInputVal}
-          searchInputHandler={this.searchInputHandler}
-          searchClickHandler={this.searchClickHandler}
-          receipechooseHandler={this.receipechooseHandler}
-          choosenReceipe={this.state.choosenReceipe}
-          imageMouseOver={this.imageMouseOver}
-          imageMouseLeave={this.imageMouseLeave}
-          imageId={this.state.imageId}
-          mealboxHandler={this.mealboxHandler}
-          DietHandler={this.DietHandler}
-          dateHandler={this.dateHandler}
-          addmealClickHandler={this.addmealClickHandler}
-          mealSelectionError={this.state.mealSelectionError}
-          viewMealsData={this.props.viewMealsData}
-          mealsApi={this.props.mealsApi}
-          filterViewMealData={this.filterViewMealData}
-          filterViewDietData={this.filterViewDietData}
-          filterViewDateData={this.filterViewDateData}
-          deleteRecipe={this.deleteRecipe}
-          duplicateRecipe={this.state.duplicateRecipe}
-        />
+            <Details
+              dietSelectHandler={this.dietSelectHandler}
+              apiData={this.props.apiData}
+              searchInputVal={this.state.searchInputVal}
+              searchInputHandler={this.searchInputHandler}
+              searchClickHandler={this.searchClickHandler}
+              receipechooseHandler={this.receipechooseHandler}
+              choosenReceipe={this.state.choosenReceipe}
+              imageMouseOver={this.imageMouseOver}
+              imageMouseLeave={this.imageMouseLeave}
+              imageId={this.state.imageId}
+              mealboxHandler={this.mealboxHandler}
+              DietHandler={this.DietHandler}
+              dateHandler={this.dateHandler}
+              addmealClickHandler={this.addmealClickHandler}
+              mealSelectionError={this.state.mealSelectionError}
+              viewMealsData={this.props.viewMealsData}
+              mealsApi={this.props.mealsApi}
+              filterViewMealData={this.filterViewMealData}
+              filterViewDietData={this.filterViewDietData}
+              filterViewDateData={this.filterViewDateData}
+              deleteRecipe={this.deleteRecipe}
+              duplicateRecipe={this.state.duplicateRecipe}
+            />
           </div>
-        )
+        );
       }
     } else {
       return (
         <div className="nodatarow">
           <div className="nodatacol">
-            <img src="https://motiongraphicsphoebe.files.wordpress.com/2018/10/tumblr_nurhzkukqo1syz1nro1_500.gif" />
+            <img
+              src="https://motiongraphicsphoebe.files.wordpress.com/2018/10/tumblr_nurhzkukqo1syz1nro1_500.gif"
+              alt="Loader"
+            />
           </div>
         </div>
       );
     }
   }
-
-        
-      
-    
-  }
-
+}
 
 const mapStateToProps = (state) => {
   console.log(state);

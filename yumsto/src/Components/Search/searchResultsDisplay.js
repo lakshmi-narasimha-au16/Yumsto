@@ -6,9 +6,6 @@ import './styles/SearchResultsDisplay.scss'
 
 
 class SearchResultsDisplay extends React.Component{
-   
-
-
     searchResultsRenderer = ()=>{
         if(this.props.searchResults){
             if(this.props.searchResults.results){

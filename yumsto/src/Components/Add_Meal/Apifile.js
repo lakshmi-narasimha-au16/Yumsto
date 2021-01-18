@@ -1,6 +1,6 @@
 import { AddMeal } from "../../Store/Actions/addamealAction";
 
-const key = "1f812a05337c4a81bbf114b4efa100e1";
+const key = "f28fb9fc0dbc44fa870c4942e7d95390";
 const url="https://api.spoonacular.com/recipes/complexSearch"
  export const MealsApiData = () => {
   const output = fetch(

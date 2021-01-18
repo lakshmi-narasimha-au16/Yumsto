@@ -66,6 +66,7 @@ const Display = (props) => {
                   onMouseOver={() => imageMouseOver(details.id)}
                   onMouseLeave={imageMouseLeave}
                   src={details.image}
+                  alt="recipeImage"
                 />
                 <p>{details.title}</p>
 
